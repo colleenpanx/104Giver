@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelly 導遊夢想清單：學經歷價值極大化健檢報告</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            deep: '#1A535C',
+                            teal: '#4ECDC4',
+                            light: '#F7FFF7',
+                            red: '#FF6B6B',
+                            yellow: '#FFE66D',
+                            text: '#2D3436'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"PingFang TC"', '"Microsoft JhengHei"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            height: 350px;
+            max-height: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .card {
+            background-color: white;
+            border-radius: 1rem;
+            box-shadow: 0 4px 20px -5px rgba(26, 83, 92, 0.1);
+            transition: all 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 25px -5px rgba(26, 83, 92, 0.15);
+        }
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background-color: rgba(78, 205, 196, 0.3);
+            z-index: 0;
+        }
+    </style>
+</head>
+<body class="bg-brand-light text-brand-text font-sans antialiased">
+
+    <nav class="bg-brand-deep text-white sticky top-0 z-50 shadow-lg">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="font-bold text-xl tracking-wide">104 <span class="text-brand-yellow">履歷診療室</span></div>
+            <div class="text-sm font-medium">專為 Kelly 打造的導遊之路引導</div>
+        </div>
+    </nav>
+
+    <header class="relative bg-brand-deep text-white pb-24 pt-16 overflow-hidden">
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 bg-brand-teal rounded-full opacity-20"></div>
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">將「學經歷」沉澱為導遊的底氣</h1>
+            <p class="text-xl md:text-2xl text-brand-teal mb-8">Kelly 的夢想實踐健檢報告</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <span class="bg-white/10 px-4 py-2 rounded-full border border-brand-yellow text-brand-yellow">目標：專業導遊 / 行程規劃</span>
+                <span class="bg-white/10 px-4 py-2 rounded-full border border-brand-teal text-brand-teal">核心特質：細膩觀察、傳播敘事</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-6 -mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
+
+        <section class="col-span-1 md:col-span-2">
+            <div class="card p-8">
+                <div class="flex flex-col md:flex-row items-center gap-10">
+                    <div class="w-full md:w-1/2">
+                        <h2 class="text-2xl font-bold text-brand-deep mb-4 border-l-4 border-brand-red pl-3">履歷精準度：專業細節診斷</h2>
+                        <p class="mb-4 text-gray-600 leading-relaxed">
+                            Kelly，你對導遊工作的嚮往非常珍貴。要敲開旅遊業的大門，除了展現熱忱，更要同步展現你的專業準備度。目前你的學經歷已打下厚實基礎，補上最後一塊「證照」拼圖後，職涯發展將會事半功倍。
+                        </p>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <span class="bg-brand-red text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mt-1 mr-3 flex-shrink-0">!</span>
+                                <div><strong>希望職稱需一致：</strong> 目前寫著「遠端、前端」，建議修正為導遊相關職稱，避免系統篩選時產生誤判。</div>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="bg-brand-red text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mt-1 mr-3 flex-shrink-0">!</span>
+                                <div><strong>經歷日期校對：</strong> <b>德事商務 (TEC) 的入職日期 2014/3 請檢查是否正確</b>，確保年份資訊與實際職涯進程相符。</div>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="bg-brand-teal text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mt-1 mr-3 flex-shrink-0">✓</span>
+                                <div><strong>排球隊副隊長亮點：</strong> 具備明確的「排球隊副隊長」領導經歷，這代表你擁有導遊最核心的「群體溝通」與「隊伍管理」能力。</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/2 flex flex-col items-center">
+                        <div class="chart-container">
+                            <canvas id="auditChart"></canvas>
+                        </div>
+                        <p class="text-sm text-gray-500 mt-2">目標契合度評析 (夢想 vs 履歷呈現)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="col-span-1 md:col-span-1">
+            <div class="card p-6 h-full flex flex-col">
+                <h3 class="text-xl font-bold text-brand-deep mb-2">學經歷 vs 導遊職能</h3>
+                <p class="text-sm text-gray-600 mb-6">將你的「傳藝背景」與「排球隊副隊長」經歷拆解。你的團體控管與細膩觀察是現成的戰力。</p>
+                <div class="chart-container flex-grow">
+                    <canvas id="skillRadar"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section class="col-span-1 md:col-span-1">
+            <div class="card p-6 h-full flex flex-col">
+                <h3 class="text-xl font-bold text-brand-deep mb-2">過往績效亮點</h3>
+                <p class="text-sm text-gray-600 mb-6">透過數據展現你在業務與服務端的表現，並呈現排球隊副隊長時期累積的領導實績。</p>
+                <div class="chart-container flex-grow">
+                    <canvas id="impactBar"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section class="col-span-1 md:col-span-2">
+            <div class="card p-8 bg-brand-deep text-white">
+                <h2 class="text-2xl font-bold text-brand-yellow mb-8 text-center">每一份累積，都是導遊專業的拼圖</h2>
+                <div class="relative">
+                    <div class="hidden md:block timeline-line"></div>
+                    <div class="space-y-12 md:space-y-16 relative">
+                        <div class="md:flex items-center justify-between w-full">
+                            <div class="order-1 md:w-5/12 text-right pr-6 hidden md:block">
+                                <h4 class="font-bold text-lg text-brand-teal">傳播藝術系背景</h4>
+                                <p class="text-sm opacity-80">具備說故事的「敘事力」，這讓你能為景點注入靈魂，而不只是唸講稿。</p>
+                            </div>
+                            <div class="order-1 md:w-2/12 flex justify-center z-10">
+                                <div class="w-14 h-14 bg-brand-yellow rounded-full flex items-center justify-center text-brand-deep font-bold text-2xl shadow-xl">🏐</div>
+                            </div>
+                            <div class="order-1 md:w-5/12 pl-6">
+                                <h4 class="font-bold text-lg text-brand-yellow md:hidden">傳播藝術系 & 排球隊副隊長</h4>
+                                <p class="text-sm text-gray-100">身為<b>排球隊副隊長</b>，你學會了分配資源、觀察隊員狀態與心理調節。這與導遊在行程中照顧團員情緒的能力高度重疊。</p>
+                            </div>
+                        </div>
+                        <div class="md:flex items-center justify-between w-full">
+                            <div class="order-1 md:w-5/12 text-right pr-6">
+                                <h4 class="font-bold text-lg text-brand-yellow md:hidden">行銷開發經驗</h4>
+                                <p class="text-sm text-gray-100 md:text-right">單月完成 8 筆成交，證明了你的「開發力」與「抗壓性」。</p>
+                            </div>
+                            <div class="order-1 md:w-2/12 flex justify-center z-10">
+                                <div class="w-14 h-14 bg-brand-teal rounded-full flex items-center justify-center text-white font-bold text-2xl shadow-xl">🎯</div>
+                            </div>
+                            <div class="order-1 md:w-5/12 pl-6 hidden md:block">
+                                <h4 class="font-bold text-lg text-brand-teal">行銷業務開發</h4>
+                                <p class="text-sm opacity-80">具備「需求洞察力」，能靈活處理行程中的各種客戶要求。</p>
+                            </div>
+                        </div>
+                        <div class="md:flex items-center justify-between w-full">
+                            <div class="order-1 md:w-5/12 text-right pr-6 hidden md:block">
+                                <h4 class="font-bold text-lg text-brand-teal">TEC 會員服務</h4>
+                                <p class="text-sm opacity-80">跨國商務客戶的接待，提升滿意度達 5%。</p>
+                            </div>
+                            <div class="order-1 md:w-2/12 flex justify-center z-10">
+                                <div class="w-14 h-14 bg-brand-red rounded-full flex items-center justify-center text-white font-bold text-2xl shadow-xl">🤝</div>
+                            </div>
+                            <div class="order-1 md:w-5/12 pl-6">
+                                <h4 class="font-bold text-lg text-brand-yellow md:hidden">商務中心服務</h4>
+                                <p class="text-sm text-gray-100">賦予你「高規格服務」的基礎，創造高品質的旅遊體驗。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="col-span-1 md:col-span-2">
+            <h2 class="text-2xl font-bold text-brand-deep mb-6 text-center">導遊職涯加速清單</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="card p-6 border-t-8 border-brand-red">
+                    <div class="text-3xl mb-3">🛠️</div>
+                    <h3 class="font-bold text-lg mb-2">修正希望職稱</h3>
+                    <p class="text-sm text-gray-600 mb-3">請將「前端、遠端」移除。改為：<b>導遊、領隊、國外業務</b>。</p>
+                </div>
+                <div class="card p-6 border-t-8 border-brand-red">
+                    <div class="text-3xl mb-3">📅</div>
+                    <h3 class="font-bold text-lg mb-2">檢查經歷日期</h3>
+                    <p class="text-sm text-gray-600 mb-3"><b>請確認德事商務 (TEC) 的入職年份是否正確</b>，並更新為實際到職時間。</p>
+                </div>
+                <div class="card p-6 border-t-8 border-brand-teal">
+                    <div class="text-3xl mb-3">📜</div>
+                    <h3 class="font-bold text-lg mb-2">強化專業標註</h3>
+                    <p class="text-sm text-gray-600 mb-3">在證照欄位標註：<b>「正積極準備導遊/領隊證照考取」</b>。同時強調英文、中文聽說中等能力，這對面試官非常加分。</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-100 border-t border-gray-200 py-10">
+        <div class="max-w-4xl mx-auto px-6 text-center text-gray-500 text-sm">
+            <p class="mb-2">這是基於你寶貴學經歷所整理的健檢報告，期待你的導遊夢想成真。</p>
+            <p class="font-medium text-brand-deep">2026/01/29 104 履歷診療室 Giver｜Colleen Pan</p>
+        </div>
+    </footer>
+
+    <script>
+        function wrapLabel(str, maxLen = 12) {
+            if (str.length <= maxLen) return str;
+            const lines = [];
+            for (let i = 0; i < str.length; i += maxLen) {
+                lines.push(str.substring(i, i + maxLen));
+            }
+            return lines;
+        }
+
+        const commonTooltipOptions = {
+            callbacks: {
+                title: function(tooltipItems) {
+                    const item = tooltipItems[0];
+                    let label = item.chart.data.labels[item.dataIndex];
+                    return Array.isArray(label) ? label.join('') : label;
+                }
+            }
+        };
+
+        new Chart(document.getElementById('auditChart').getContext('2d'), {
+            type: 'doughnut',
+            data: {
+                labels: ['過往經歷價值', '現有軟實力', '格式與邏輯優化'],
+                datasets: [{
+                    data: [45, 45, 10],
+                    backgroundColor: ['#4ECDC4', '#FFE66D', '#FF6B6B'],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'bottom' },
+                    tooltip: commonTooltipOptions
+                }
+            }
+        });
+
+        new Chart(document.getElementById('skillRadar').getContext('2d'), {
+            type: 'radar',
+            data: {
+                labels: [
+                    wrapLabel('敘事力 (傳藝背景)'), 
+                    wrapLabel('團隊統籌 (排球隊副隊長)'), 
+                    wrapLabel('開發力 (業務經驗)'), 
+                    wrapLabel('旅遊專業證照'), 
+                    wrapLabel('細膩服務 (TEC)')
+                ],
+                datasets: [{
+                    label: 'Kelly 學經歷戰力',
+                    data: [95, 85, 90, 20, 95],
+                    backgroundColor: 'rgba(26, 83, 92, 0.5)',
+                    borderColor: '#1A535C',
+                    pointBackgroundColor: '#1A535C'
+                },
+                {
+                    label: '導遊入行門檻',
+                    data: [85, 80, 70, 90, 80],
+                    backgroundColor: 'rgba(255, 107, 107, 0.2)',
+                    borderColor: '#FF6B6B',
+                    borderDash: [5, 5]
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'bottom' },
+                    tooltip: commonTooltipOptions
+                },
+                scales: {
+                    r: {
+                        angleLines: { color: '#ddd' },
+                        suggestedMin: 0,
+                        suggestedMax: 100
+                    }
+                }
+            }
+        });
+
+        new Chart(document.getElementById('impactBar').getContext('2d'), {
+            type: 'bar',
+            data: {
+                labels: [
+                    wrapLabel('單月業務成交量'), 
+                    wrapLabel('滿意度提升率 (%)'),
+                    wrapLabel('團隊領導 (排球隊副隊長)'),
+                    wrapLabel('跨部門支援度')
+                ],
+                datasets: [{
+                    label: '表現指標',
+                    data: [8, 5, 9.5, 9], 
+                    backgroundColor: ['#FFE66D', '#4ECDC4', '#1A535C', '#FF6B6B'],
+                    borderRadius: 8
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: commonTooltipOptions
+                },
+                scales: {
+                    y: { beginAtZero: true }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

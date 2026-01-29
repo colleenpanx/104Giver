@@ -10,7 +10,7 @@
     <style>
         body {
             font-family: 'Noto Sans TC', sans-serif;
-            background-color: #FDFBF7; /* Warm neutral background */
+            background-color: #FDFBF7;
             color: #4A4A4A;
         }
         .chart-container {
@@ -30,7 +30,7 @@
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
         .btn-primary {
-            background-color: #D4A373; /* Warm Tan */
+            background-color: #D4A373;
             color: white;
             transition: background-color 0.2s;
         }
@@ -52,26 +52,9 @@
             background-color: #D4A373;
         }
     </style>
-    <!-- Chosen Palette: Warm Neutrals (Cream, Sand, Charcoal, Soft Tan) -->
-    <!-- Application Structure Plan: 
-         1. Dashboard Header: Introduction and summary.
-         2. Radar Chart Analysis: Visualizing skill gaps.
-         3. Job Strategy Cards: Interactive cards for the 3 specific job wishes.
-         4. Portfolio Audit Tabs: Switching between Hard Skills and Detail Control.
-         5. Resume Transformer: Before/After toggle for STAR method descriptions.
-         6. Action Plan Footer: Summary of next steps with updated Giver info.
-    -->
-    <!-- Visualization & Content Choices:
-         - Radar Chart: Skill visualization.
-         - Interactive Cards: Job-specific strategies (updated for UI/UX focus).
-         - Tabbed Content: Portfolio diagnosis logic.
-         - Toggle Switch: Resume optimization examples.
-    -->
-    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
 </head>
 <body class="antialiased min-h-screen flex flex-col">
 
-    <!-- Header Section -->
     <header class="bg-white shadow-sm sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
             <h1 class="text-2xl font-bold text-gray-800 tracking-tight">🔍 林同學的職涯健檢報告</h1>
@@ -86,7 +69,6 @@
 
     <main class="flex-grow container mx-auto px-4 py-8 space-y-16">
 
-        <!-- Intro Section -->
         <section class="text-center max-w-3xl mx-auto space-y-4 animate-fade-in-up">
             <p class="text-lg text-gray-600 leading-relaxed">
                 這份報告整合了對你前三志願的媒合分析、作品集細節的技術診斷，以及實戰經驗的優化建議。
@@ -94,7 +76,6 @@
             </p>
         </section>
 
-        <!-- Section 1: Skill Gap Analysis (Chart) -->
         <section id="analysis" class="bg-white rounded-2xl p-6 md:p-10 shadow-lg border border-gray-100">
             <div class="grid md:grid-cols-2 gap-8 items-center">
                 <div>
@@ -130,7 +111,6 @@
             </div>
         </section>
 
-        <!-- Section 2: Job Strategy Cards -->
         <section id="strategy">
             <div class="mb-8">
                 <h2 class="text-2xl font-bold text-gray-800 section-title">🎯 三大志願攻防策略</h2>
@@ -138,11 +118,9 @@
             </div>
             
             <div class="grid md:grid-cols-3 gap-6" id="jobCardsContainer">
-                <!-- Cards will be injected by JS -->
             </div>
         </section>
 
-        <!-- Section 3: Portfolio Diagnosis -->
         <section id="portfolio" class="bg-gray-50 rounded-2xl p-8 border border-gray-200">
             <h2 class="text-2xl font-bold text-gray-800 section-title mb-6">🛠 作品集技術診斷室</h2>
             <p class="text-gray-600 mb-8">為了競爭頂尖職缺，我們需要修復以下兩個關鍵問題。切換分頁查看具體處方。</p>
@@ -206,13 +184,11 @@
             </div>
         </section>
 
-        <!-- Section 4: Resume Optimization (Interactive) -->
         <section id="resume">
             <h2 class="text-2xl font-bold text-gray-800 section-title mb-6">📄 履歷文字升級 (STAR 原則)</h2>
             <p class="text-gray-600 mb-8">將履歷中的「流水帳」轉變為「戰績」。試著切換下方的開關，感受文字力量的差異。</p>
 
             <div class="grid gap-6">
-                <!-- Resume Item 1 -->
                 <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-gray-300 transition-all duration-300" id="resume-card-1">
                     <div class="flex justify-between items-center mb-4">
                         <h3 class="font-bold text-lg text-gray-700">工作經歷：短影音製作</h3>
@@ -231,7 +207,6 @@
                     <div id="resume-feedback-1" class="mt-3 text-xs text-green-600 hidden font-bold">✨ 加入了數據與具體成果！</div>
                 </div>
 
-                <!-- Resume Item 2 -->
                 <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-gray-300 transition-all duration-300" id="resume-card-2">
                     <div class="flex justify-between items-center mb-4">
                         <h3 class="font-bold text-lg text-gray-700">工作經歷：網站維護</h3>
@@ -239,7 +214,7 @@
                             <span class="mr-3 text-sm text-gray-500 font-medium">原始版</span>
                             <div class="relative">
                                 <input type="checkbox" class="sr-only peer" onchange="toggleResumeText(2, this.checked)">
-                                <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left- [2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#D4A373]"></div>
+                                <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#D4A373]"></div>
                             </div>
                             <span class="ml-3 text-sm text-[#D4A373] font-bold">升級版</span>
                         </label>
@@ -254,7 +229,6 @@
 
     </main>
 
-    <!-- Footer -->
     <footer class="bg-gray-800 text-white py-12 mt-12">
         <div class="container mx-auto px-4 text-center space-y-4">
             <h2 class="text-2xl font-bold">下一步行動</h2>
@@ -274,7 +248,6 @@
     </footer>
 
     <script>
-        // --- Data ---
         const jobData = [
             {
                 rank: "首選志願",
@@ -316,13 +289,11 @@
             }
         };
 
-        // --- Init ---
         document.addEventListener('DOMContentLoaded', () => {
             renderJobCards();
             initChart();
         });
 
-        // --- Job Cards Render Logic ---
         function renderJobCards() {
             const container = document.getElementById('jobCardsContainer');
             container.innerHTML = jobData.map(job => `
@@ -350,7 +321,6 @@
             `).join('');
         }
 
-        // --- Chart Logic ---
         function initChart() {
             const ctx = document.getElementById('skillRadarChart').getContext('2d');
             new Chart(ctx, {
@@ -361,7 +331,7 @@
                         label: '目前能力',
                         data: [90, 85, 60, 50, 80],
                         fill: true,
-                        backgroundColor: 'rgba(212, 163, 115, 0.2)', // #D4A373
+                        backgroundColor: 'rgba(212, 163, 115, 0.2)',
                         borderColor: 'rgb(212, 163, 115)',
                         pointBackgroundColor: 'rgb(212, 163, 115)',
                         pointBorderColor: '#fff',
@@ -398,7 +368,6 @@
             });
         }
 
-        // --- Interaction Logic ---
         window.switchTab = function(tabId, btn) {
             document.querySelectorAll('.tab-content').forEach(el => {
                 el.classList.add('hidden');

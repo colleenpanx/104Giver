@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>104 履歷診療室：陳同學健檢報告</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap');
+        
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: #f8fafc;
+        }
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            height: 300px;
+        }
+
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 320px;
+            }
+        }
+
+        .job-card {
+            transition: all 0.3s ease;
+        }
+        .job-card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body class="text-slate-900">
+
+    <header class="bg-slate-900 text-white py-10 px-6">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center">
+            <div class="text-center md:text-left">
+                <span class="bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest">104 履歷診療室</span>
+                <h1 class="text-3xl md:text-5xl font-black mt-3">陳同學｜履歷診斷報告</h1>
+                <p class="text-sky-400 font-bold mt-2 text-lg">建築系專才：邁向室內裝修專業助理的優化指南</p>
+            </div>
+            <div class="mt-6 md:mt-0 text-right hidden md:block border-l-2 border-slate-700 pl-6">
+                <p class="text-slate-400 text-sm">諮詢師｜Colleen Pan</p>
+                <p class="text-slate-400 text-sm italic">2026/01/29</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-6 py-12 space-y-12">
+
+        <section class="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
+            <div class="lg:col-span-2">
+                <h2 class="text-2xl font-black mb-6 flex items-center gap-2">
+                    <span class="w-2 h-8 bg-orange-500 rounded-full"></span>
+                    核心優勢與專業定位
+                </h2>
+                <div class="space-y-4">
+                    <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-100">
+                        <h3 class="font-bold text-sky-700">📌 專業建築科班即戰力</h3>
+                        <p class="text-slate-600 text-sm mt-1">擁有建築系完整的學術訓練，具備紮實的識圖能力與空間邏輯，這在室內裝修領域具備更高的專業起點。</p>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-100">
+                        <h3 class="font-bold text-sky-700">📌 數位建模與渲染專長</h3>
+                        <p class="text-slate-600 text-sm mt-1">熟練 Enscape、Lumion 等專業軟體，能直接協助設計師產出精美的視覺提案，是團隊中極具價值的核心技術支援。</p>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-100">
+                        <h3 class="font-bold text-sky-700">📌 現場執行力與環境韌性</h3>
+                        <p class="text-slate-600 text-sm mt-1">具備規律的運動習慣與高度韌性，能高效適應工地現場、丈量挑戰及各種複雜的實務環境要求。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="lg:col-span-3 bg-white p-6 rounded-2xl shadow-xl border border-slate-100">
+                <div class="chart-container">
+                    <canvas id="skillsChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white rounded-3xl shadow-xl p-8 border border-slate-100">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-8 gap-4">
+                <div>
+                    <h2 class="text-2xl font-black flex items-center gap-2">
+                        <span class="w-2 h-8 bg-sky-500 rounded-full"></span>
+                        目標職缺精準對接
+                    </h2>
+                    <p class="text-slate-500 text-sm mt-1">針對投遞的職位進行適配分析，重點在於展現你「具備工程思維且能落實執行」的雙重價值。</p>
+                </div>
+                <div class="flex gap-4 text-xs font-bold text-slate-400">
+                    <span class="flex items-center gap-1"><span class="w-3 h-3 bg-green-500 rounded-full"></span> 優先進攻</span>
+                    <span class="flex items-center gap-1"><span class="w-3 h-3 bg-yellow-500 rounded-full"></span> 次要目標</span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="job-card bg-slate-50 p-6 rounded-2xl border-t-4 border-green-500">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="text-2xl">🎨</span>
+                        <span class="text-green-600 font-black text-xl italic">推薦指數: 5.0</span>
+                    </div>
+                    <h4 class="font-black text-slate-800">碩藝室內裝修</h4>
+                    <p class="text-xs text-slate-500 mb-3">室內設計助理 (兼職)</p>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        **強力推薦：** 你的繪圖與建模能力高度契合，建築背景更能協助公司處理細緻的施工圖面。
+                    </p>
+                </div>
+
+                <div class="job-card bg-slate-50 p-6 rounded-2xl border-t-4 border-green-500">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="text-2xl">🏗️</span>
+                        <span class="text-green-600 font-black text-xl italic">推薦指數: 5.0</span>
+                    </div>
+                    <h4 class="font-black text-slate-800">文儀室內裝修</h4>
+                    <p class="text-xs text-slate-500 mb-3">工程短期協助人員</p>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        **執行加分：** 職缺重視對現場環境的適應與觀察。強調你具備工程識圖能力並能落實現場任務，錄取機會極高。
+                    </p>
+                </div>
+
+                <div class="job-card bg-slate-50 p-6 rounded-2xl border-t-4 border-yellow-500">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="text-2xl">📂</span>
+                        <span class="text-yellow-600 font-black text-xl italic">推薦指數: 3.0</span>
+                    </div>
+                    <h4 class="font-black text-slate-800">閏年室內裝修</h4>
+                    <p class="text-xs text-slate-500 mb-3">辦公室助理</p>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        **多元支援：** 此職位偏向行政。可強調利用你對材料的理解與軟體能力，支援美編或材料庫管理。
+                    </p>
+                </div>
+            </div>
+            
+            <div class="mt-8 pt-8 border-t border-slate-100">
+                <div class="chart-container h-48 md:h-24">
+                    <canvas id="jobMatchChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="space-y-6">
+                <h2 class="text-2xl font-black flex items-center gap-2">
+                    <span class="w-2 h-8 bg-slate-800 rounded-full"></span>
+                    履歷內容優化建議
+                </h2>
+                <div class="bg-red-50 p-6 rounded-2xl border-l-4 border-red-400">
+                    <h4 class="font-bold text-red-800 mb-2">❌ 避開通用的非專業稱呼</h4>
+                    <p class="text-sm text-red-700">「營建構造工」或「暑期工讀生」。這些名稱會稀釋你的專業價值，讓系統難以精準媒合到助理職位。</p>
+                </div>
+                <div class="bg-sky-50 p-6 rounded-2xl border-l-4 border-sky-400">
+                    <h4 class="font-bold text-sky-800 mb-2">✅ 使用精準職務標籤</h4>
+                    <p class="text-sm text-sky-700 italic">「室內設計助理」、「工務助理」。</p>
+                    <p class="text-sm text-sky-700 mt-2 font-bold">具體化工作亮點：</p>
+                    <p class="text-sm text-sky-700">「協助現勘丈量、負責渲染提案圖、參與工地現場實務記錄」。</p>
+                </div>
+            </div>
+
+            <div class="bg-slate-900 text-white p-8 rounded-3xl relative overflow-hidden flex flex-col justify-center shadow-2xl">
+                <div class="absolute top-0 right-0 p-4 opacity-10 text-9xl">💡</div>
+                <h2 class="text-2xl font-black mb-6">面試致勝點</h2>
+                <div class="space-y-6">
+                    <div class="flex gap-4">
+                        <div class="bg-orange-500 w-10 h-10 rounded-lg flex items-center justify-center shrink-0 font-black">1</div>
+                        <div>
+                            <h4 class="font-bold">作品集展現專業深度</h4>
+                            <p class="text-xs text-slate-400">準備兩類作品：能呈現邏輯的「施工圖」與展現質感的「效果渲染圖」。</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="bg-sky-500 w-10 h-10 rounded-lg flex items-center justify-center shrink-0 font-black">2</div>
+                        <div>
+                            <h4 class="font-bold">專業儀容與實務準備</h4>
+                            <p class="text-xs text-slate-400">穿著整齊休閒正裝，隨身攜帶捲尺與筆記本。展現對於現場環境的高度適應力與隨時待命的專業準備。</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="bg-green-500 w-10 h-10 rounded-lg flex items-center justify-center shrink-0 font-black">3</div>
+                        <div>
+                            <h4 class="font-bold">主動詢問實務運作</h4>
+                            <p class="text-xs text-slate-400">面試時詢問案場進度，展現對「專業實作」的高度熱情與參與意願。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center py-10 border-t border-slate-200">
+            <p class="text-slate-600 font-bold mb-1">祝面試順利！</p>
+            <p class="text-slate-400 text-sm">2026/01/29 104 履歷診療室 Giver｜Colleen Pan</p>
+        </footer>
+
+    </main>
+
+    <script>
+        Chart.defaults.font.family = "'Noto Sans TC', sans-serif";
+
+        const tooltipConfig = {
+            tooltip: {
+                backgroundColor: 'rgba(15, 23, 42, 0.9)',
+                padding: 10,
+                callbacks: {
+                    title: function(items) {
+                        const label = items[0].chart.data.labels[items[0].dataIndex];
+                        return Array.isArray(label) ? label.join(' ') : label;
+                    }
+                }
+            }
+        };
+
+        const skillsCtx = document.getElementById('skillsChart').getContext('2d');
+        new Chart(skillsCtx, {
+            type: 'radar',
+            data: {
+                labels: ["繪圖能力 (CAD/SU)", "效果渲染與視覺化", "工地執行與適應力", "建築識圖與法規", "行政與材料管理"],
+                datasets: [{
+                    label: '專業能力核定',
+                    data: [90, 85, 95, 80, 65],
+                    backgroundColor: 'rgba(2, 132, 199, 0.2)',
+                    borderColor: '#0284c7',
+                    pointBackgroundColor: '#f97316',
+                    pointBorderColor: '#fff',
+                    pointHoverRadius: 6
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                scales: {
+                    r: {
+                        suggestedMin: 0,
+                        suggestedMax: 100,
+                        ticks: { display: false },
+                        pointLabels: {
+                            font: { size: 14, weight: 'bold' },
+                            color: '#475569'
+                        }
+                    }
+                },
+                plugins: {
+                    legend: { display: false },
+                    ...tooltipConfig
+                }
+            }
+        });
+
+        const matchCtx = document.getElementById('jobMatchChart').getContext('2d');
+        new Chart(matchCtx, {
+            type: 'bar',
+            data: {
+                labels: ["碩藝 (設計助理)", "文儀 (工程協助)", "閏年 (辦公助理)"],
+                datasets: [{
+                    label: '推薦程度',
+                    data: [5, 5, 3],
+                    backgroundColor: ['#22c55e', '#22c55e', '#eab308'],
+                    borderRadius: 4,
+                    barThickness: 24
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                indexAxis: 'y',
+                scales: {
+                    x: { max: 5, display: false },
+                    y: { 
+                        grid: { display: false },
+                        ticks: {
+                            font: { size: 12, weight: 'bold' },
+                            color: '#1e293b'
+                        }
+                    }
+                },
+                plugins: {
+                    legend: { display: false },
+                    ...tooltipConfig
+                }
+            }
+        });
+    </script>
+</body>
+</html>

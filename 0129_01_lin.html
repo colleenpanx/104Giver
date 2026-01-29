@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>林同學專屬：設計職涯健檢報告</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: #FDFBF7; /* Warm neutral background */
+            color: #4A4A4A;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .btn-primary {
+            background-color: #D4A373; /* Warm Tan */
+            color: white;
+            transition: background-color 0.2s;
+        }
+        .btn-primary:hover {
+            background-color: #C39263;
+        }
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 60%;
+            height: 3px;
+            background-color: #D4A373;
+        }
+    </style>
+    <!-- Chosen Palette: Warm Neutrals (Cream, Sand, Charcoal, Soft Tan) -->
+    <!-- Application Structure Plan: 
+         1. Dashboard Header: Introduction and summary.
+         2. Radar Chart Analysis: Visualizing skill gaps.
+         3. Job Strategy Cards: Interactive cards for the 3 specific job wishes.
+         4. Portfolio Audit Tabs: Switching between Hard Skills and Detail Control.
+         5. Resume Transformer: Before/After toggle for STAR method descriptions.
+         6. Action Plan Footer: Summary of next steps with updated Giver info.
+    -->
+    <!-- Visualization & Content Choices:
+         - Radar Chart: Skill visualization.
+         - Interactive Cards: Job-specific strategies (updated for UI/UX focus).
+         - Tabbed Content: Portfolio diagnosis logic.
+         - Toggle Switch: Resume optimization examples.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+</head>
+<body class="antialiased min-h-screen flex flex-col">
+
+    <!-- Header Section -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-gray-800 tracking-tight">🔍 林同學的職涯健檢報告</h1>
+            <nav class="hidden md:flex space-x-6 text-sm font-medium text-gray-500">
+                <a href="#analysis" class="hover:text-[#D4A373]">能力分析</a>
+                <a href="#strategy" class="hover:text-[#D4A373]">職缺攻略</a>
+                <a href="#portfolio" class="hover:text-[#D4A373]">作品集優化</a>
+                <a href="#resume" class="hover:text-[#D4A373]">履歷升級</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-grow container mx-auto px-4 py-8 space-y-16">
+
+        <!-- Intro Section -->
+        <section class="text-center max-w-3xl mx-auto space-y-4 animate-fade-in-up">
+            <p class="text-lg text-gray-600 leading-relaxed">
+                這份報告整合了對你前三志願的媒合分析、作品集細節的技術診斷，以及實戰經驗的優化建議。
+                你目前已經具備 <span class="font-bold text-[#D4A373]">80分</span> 的實力，這份互動報告將協助你補足關鍵的 <span class="font-bold text-[#D4A373]">20分</span>，助你拿下理想 Offer。
+            </p>
+        </section>
+
+        <!-- Section 1: Skill Gap Analysis (Chart) -->
+        <section id="analysis" class="bg-white rounded-2xl p-6 md:p-10 shadow-lg border border-gray-100">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-800 section-title">綜合能力分析：80/20 法則</h2>
+                    <p class="text-gray-600 mb-4">
+                        依據你的資歷與作品集分析，你在「視覺美感」與「工具廣度」上極具優勢。然而，要挑戰 UI/UX 或資深設計職位，目前主要缺口在於「邏輯流程」與「細節控管」。
+                    </p>
+                    <ul class="space-y-3 mt-6">
+                        <li class="flex items-center">
+                            <span class="w-3 h-3 rounded-full bg-[#D4A373] mr-3"></span>
+                            <span class="text-gray-700"><strong>視覺美感 (90%)：</strong> 排版乾淨專業，具備深厚傳達背景。</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-3 h-3 rounded-full bg-[#D4A373] mr-3"></span>
+                            <span class="text-gray-700"><strong>工具廣度 (85%)：</strong> 平面、影音、Web 工具皆能上手。</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-3 h-3 rounded-full bg-gray-300 mr-3"></span>
+                            <span class="text-gray-500"><strong>邏輯流程 (60%)：</strong> 需強化 User Flow 與設計思考過程。</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-3 h-3 rounded-full bg-gray-300 mr-3"></span>
+                            <span class="text-gray-500"><strong>細節控管 (50%)：</strong> 圖片解析度問題需優先解決。</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="chart-container">
+                        <canvas id="skillRadarChart"></canvas>
+                    </div>
+                    <p class="text-xs text-gray-400 mt-2 text-center">能力分布示意圖：橘色區域為你的優勢，灰色區域為需補強目標</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Job Strategy Cards -->
+        <section id="strategy">
+            <div class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-800 section-title">🎯 三大志願攻防策略</h2>
+                <p class="text-gray-600">針對你提出的三個目標職缺，點擊下方卡片查看詳細的媒合分析與「加分策略」。</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-6" id="jobCardsContainer">
+                <!-- Cards will be injected by JS -->
+            </div>
+        </section>
+
+        <!-- Section 3: Portfolio Diagnosis -->
+        <section id="portfolio" class="bg-gray-50 rounded-2xl p-8 border border-gray-200">
+            <h2 class="text-2xl font-bold text-gray-800 section-title mb-6">🛠 作品集技術診斷室</h2>
+            <p class="text-gray-600 mb-8">為了競爭頂尖職缺，我們需要修復以下兩個關鍵問題。切換分頁查看具體處方。</p>
+
+            <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+                <div class="flex border-b border-gray-100">
+                    <button class="flex-1 py-4 text-center font-semibold text-gray-500 hover:text-[#D4A373] transition-colors bg-gray-50 active-tab" onclick="switchTab('hard-skills', this)">
+                        1. 補強硬實力 (UI/UX)
+                    </button>
+                    <button class="flex-1 py-4 text-center font-semibold text-gray-500 hover:text-[#D4A373] transition-colors bg-gray-50" onclick="switchTab('detail-control', this)">
+                        2. 致命細節救援 (品質)
+                    </button>
+                </div>
+
+                <div id="hard-skills" class="p-8 tab-content block animate-fade-in">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">缺口：只有「畫面」，少了「思考」</h3>
+                    <p class="text-gray-600 mb-6">UI/UX 主管想看的是「你為什麼這樣畫」，而不只是「畫出了什麼」。</p>
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <div class="bg-[#FFF8F0] p-5 rounded-lg border border-[#EAD0B3]">
+                            <div class="text-2xl mb-2">📱</div>
+                            <h4 class="font-bold text-gray-800 mb-2">增加 Case Study</h4>
+                            <p class="text-sm text-gray-600">挑選一個 App 專案，完整呈現：痛點分析 ➔ User Flow (流程圖) ➔ Wireframe ➔ Mockup。</p>
+                        </div>
+                        <div class="bg-[#FFF8F0] p-5 rounded-lg border border-[#EAD0B3]">
+                            <div class="text-2xl mb-2">🧩</div>
+                            <h4 class="font-bold text-gray-800 mb-2">展示 Figma 技能</h4>
+                            <p class="text-sm text-gray-600">展示你對 Component (元件化) 與 Auto Layout 的運用，證明檔案具備開發規格。</p>
+                        </div>
+                        <div class="bg-[#FFF8F0] p-5 rounded-lg border border-[#EAD0B3]">
+                            <div class="text-2xl mb-2">📐</div>
+                            <h4 class="font-bold text-gray-800 mb-2">RWD 響應式思維</h4>
+                            <p class="text-sm text-gray-600">網頁專案應同時並列展示「電腦版 vs. 手機版」的呈現圖。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="detail-control" class="p-8 tab-content hidden animate-fade-in">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4 text-red-500">警報：解析度與品質問題</h3>
+                    <p class="text-gray-600 mb-6">
+                        在你的「識別設計」與「Icon 設計」分頁中，部分圖片在電腦螢幕觀看時有明顯的鋸齒感。
+                        <br>設計師金律：<span class="font-bold underline">寧可作品少，也不要放一張模糊的圖。</span>
+                    </p>
+                    <div class="bg-gray-100 p-6 rounded-lg">
+                        <h4 class="font-bold text-gray-800 mb-3">🚀 救援行動方案：</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2">✓</span>
+                                <span class="text-gray-700"><strong>方案 A (最佳)：</strong> 回頭找 Ai/Figma 原始檔，重新匯出 2x 或 3x 大小的高清 PNG。</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2">✓</span>
+                                <span class="text-gray-700"><strong>方案 B (替代)：</strong> 如果原檔遺失，請大幅縮小圖片在版面上的比例，利用縮小來提升視覺銳利度。</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2">✓</span>
+                                <span class="text-gray-700"><strong>方案 C (修飾)：</strong> 將模糊的 Logo 放進手機殼 Mockup 中，利用情境圖來掩飾解析度不足。</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Resume Optimization (Interactive) -->
+        <section id="resume">
+            <h2 class="text-2xl font-bold text-gray-800 section-title mb-6">📄 履歷文字升級 (STAR 原則)</h2>
+            <p class="text-gray-600 mb-8">將履歷中的「流水帳」轉變為「戰績」。試著切換下方的開關，感受文字力量的差異。</p>
+
+            <div class="grid gap-6">
+                <!-- Resume Item 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-gray-300 transition-all duration-300" id="resume-card-1">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="font-bold text-lg text-gray-700">工作經歷：短影音製作</h3>
+                        <label class="inline-flex items-center cursor-pointer">
+                            <span class="mr-3 text-sm text-gray-500 font-medium">原始版</span>
+                            <div class="relative">
+                                <input type="checkbox" class="sr-only peer" onchange="toggleResumeText(1, this.checked)">
+                                <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#D4A373]"></div>
+                            </div>
+                            <span class="ml-3 text-sm text-[#D4A373] font-bold">升級版</span>
+                        </label>
+                    </div>
+                    <p id="resume-text-1" class="text-gray-600 bg-gray-50 p-4 rounded-lg italic">
+                        "協助製作短影音、產品合作洽談、網站視覺設計。"
+                    </p>
+                    <div id="resume-feedback-1" class="mt-3 text-xs text-green-600 hidden font-bold">✨ 加入了數據與具體成果！</div>
+                </div>
+
+                <!-- Resume Item 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-gray-300 transition-all duration-300" id="resume-card-2">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="font-bold text-lg text-gray-700">工作經歷：網站維護</h3>
+                        <label class="inline-flex items-center cursor-pointer">
+                            <span class="mr-3 text-sm text-gray-500 font-medium">原始版</span>
+                            <div class="relative">
+                                <input type="checkbox" class="sr-only peer" onchange="toggleResumeText(2, this.checked)">
+                                <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left- [2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#D4A373]"></div>
+                            </div>
+                            <span class="ml-3 text-sm text-[#D4A373] font-bold">升級版</span>
+                        </label>
+                    </div>
+                    <p id="resume-text-2" class="text-gray-600 bg-gray-50 p-4 rounded-lg italic">
+                        "負責網站後台管理、線上客服。"
+                    </p>
+                    <div id="resume-feedback-2" class="mt-3 text-xs text-green-600 hidden font-bold">✨ 強調了主動優化與效率提升！</div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12 mt-12">
+        <div class="container mx-auto px-4 text-center space-y-4">
+            <h2 class="text-2xl font-bold">下一步行動</h2>
+            <p class="text-gray-400 max-w-2xl mx-auto">
+                你現在的作品集已經有 80 分了，剩下的 20 分就是補足「設計背後的思考過程」與「細節的精確度」。
+                優先修正圖片模糊問題，並深入呈現你的設計決策過程，勝率將大幅提升！
+            </p>
+            <div class="pt-6">
+                <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="text-[#D4A373] hover:text-white transition-colors underline">
+                    回到頂部再次檢視
+                </button>
+            </div>
+            <div class="text-xs text-gray-600 pt-8 tracking-wide">
+                2026/01/29 104 履歷診療室 Giver｜Colleen Pan
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- Data ---
+        const jobData = [
+            {
+                rank: "首選志願",
+                company: "威德數位設計",
+                role: "UI/UX 設計職缺",
+                match: "具備 Figma 基礎與實際網站視覺維護經驗，起步紮實。",
+                strategy: "展現邏輯：著重於對 UI/UX 核心概念的理解，面試時建議多聊你如何規劃使用者流程 (User Flow) 與設計背後的思考邏輯。",
+                colorClass: "bg-blue-50 border-blue-200",
+                icon: "💻"
+            },
+            {
+                rank: "第二志願",
+                company: "iFG 遠雄廣場",
+                role: "設計專員",
+                match: "短影音製作、社群圖文與 KOL 洽談經歷，完美契合百貨業需求。",
+                strategy: "展現效率：強調你具備「攝影、修圖、排版、發文」一條龍能力，能應對百貨節慶高節奏的轉場需求。",
+                colorClass: "bg-pink-50 border-pink-200",
+                icon: "🛍️"
+            },
+            {
+                rank: "第三志願",
+                company: "育達文化",
+                role: "平面設計人員",
+                match: "教育出版業非常看重細膩的排版功力與 InDesign 熟練度。",
+                strategy: "展現嚴謹：準備多頁排版專案（如手冊），強調你對字體選用、行距與印刷規範的堅持與品質控管。",
+                colorClass: "bg-green-50 border-green-200",
+                icon: "📚"
+            }
+        ];
+
+        const resumeData = {
+            1: {
+                original: "協助製作短影音、產品合作洽談、網站視覺設計。",
+                optimized: "獨立企劃並製作 10+ 支行銷短影音，於社群平台提升高觀看率；成功開發並對接多位 KOL 進行商業洽談，達成品牌推廣目標。"
+            },
+            2: {
+                original: "負責網站後台管理、線上客服。",
+                optimized: "負責網站視覺維護與後台管理，優化使用者操作路徑，提升線上客服處理效率。"
+            }
+        };
+
+        // --- Init ---
+        document.addEventListener('DOMContentLoaded', () => {
+            renderJobCards();
+            initChart();
+        });
+
+        // --- Job Cards Render Logic ---
+        function renderJobCards() {
+            const container = document.getElementById('jobCardsContainer');
+            container.innerHTML = jobData.map(job => `
+                <div class="bg-white rounded-xl p-6 border ${job.colorClass} card-hover flex flex-col h-full relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity text-6xl">
+                        ${job.icon}
+                    </div>
+                    <div class="mb-4">
+                        <span class="text-xs font-bold uppercase tracking-wider text-gray-400 border border-gray-200 px-2 py-1 rounded">${job.rank}</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-1">${job.company}</h3>
+                    <p class="text-gray-500 font-medium mb-4">${job.role}</p>
+                    
+                    <div class="flex-grow space-y-4">
+                        <div class="bg-gray-50 p-3 rounded-lg">
+                            <h4 class="text-xs font-bold text-gray-400 uppercase mb-1">媒合優勢</h4>
+                            <p class="text-sm text-gray-600">${job.match}</p>
+                        </div>
+                        <div class="bg-white border-l-4 border-[#D4A373] pl-3 py-1">
+                            <h4 class="text-xs font-bold text-[#D4A373] uppercase mb-1">致勝關鍵</h4>
+                            <p class="text-sm text-gray-700 font-medium leading-relaxed">${job.strategy}</p>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // --- Chart Logic ---
+        function initChart() {
+            const ctx = document.getElementById('skillRadarChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'radar',
+                data: {
+                    labels: ['視覺美感', '軟體工具', '邏輯流程', '細節控管', '跨域整合'],
+                    datasets: [{
+                        label: '目前能力',
+                        data: [90, 85, 60, 50, 80],
+                        fill: true,
+                        backgroundColor: 'rgba(212, 163, 115, 0.2)', // #D4A373
+                        borderColor: 'rgb(212, 163, 115)',
+                        pointBackgroundColor: 'rgb(212, 163, 115)',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: 'rgb(212, 163, 115)'
+                    }, {
+                        label: '目標職缺需求 (UI/UX)',
+                        data: [85, 85, 90, 90, 70],
+                        fill: true,
+                        backgroundColor: 'rgba(200, 200, 200, 0.1)',
+                        borderColor: 'rgba(200, 200, 200, 0.5)',
+                        pointBackgroundColor: 'rgba(200, 200, 200, 1)',
+                        borderDash: [5, 5]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    elements: {
+                        line: { borderWidth: 3 }
+                    },
+                    scales: {
+                        r: {
+                            angleLines: { display: true },
+                            suggestedMin: 0,
+                            suggestedMax: 100,
+                            ticks: { display: false }
+                        }
+                    },
+                    plugins: {
+                        legend: { position: 'bottom' }
+                    }
+                }
+            });
+        }
+
+        // --- Interaction Logic ---
+        window.switchTab = function(tabId, btn) {
+            document.querySelectorAll('.tab-content').forEach(el => {
+                el.classList.add('hidden');
+                el.classList.remove('block');
+            });
+            const target = document.getElementById(tabId);
+            target.classList.remove('hidden');
+            target.classList.add('block');
+
+            const parent = btn.parentElement;
+            parent.querySelectorAll('button').forEach(b => {
+                b.classList.remove('active-tab', 'text-[#D4A373]', 'bg-white', 'shadow-sm');
+                b.classList.add('text-gray-500', 'bg-gray-50');
+            });
+            btn.classList.add('active-tab', 'text-[#D4A373]', 'bg-white', 'shadow-sm');
+            btn.classList.remove('text-gray-500', 'bg-gray-50');
+        };
+
+        window.toggleResumeText = function(id, isChecked) {
+            const textEl = document.getElementById(`resume-text-${id}`);
+            const cardEl = document.getElementById(`resume-card-${id}`);
+            const feedbackEl = document.getElementById(`resume-feedback-${id}`);
+
+            if (isChecked) {
+                textEl.textContent = `"${resumeData[id].optimized}"`;
+                textEl.classList.remove('italic', 'text-gray-600', 'bg-gray-50');
+                textEl.classList.add('font-bold', 'text-gray-800', 'bg-[#FFF8F0]');
+                cardEl.classList.remove('border-gray-300');
+                cardEl.classList.add('border-[#D4A373]');
+                feedbackEl.classList.remove('hidden');
+            } else {
+                textEl.textContent = `"${resumeData[id].original}"`;
+                textEl.classList.add('italic', 'text-gray-600', 'bg-gray-50');
+                textEl.classList.remove('font-bold', 'text-gray-800', 'bg-[#FFF8F0]');
+                cardEl.classList.add('border-gray-300');
+                cardEl.classList.remove('border-[#D4A373]');
+                feedbackEl.classList.add('hidden');
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+             const firstBtn = document.querySelector('button[onclick*="hard-skills"]');
+             if(firstBtn) {
+                 firstBtn.classList.add('active-tab', 'text-[#D4A373]', 'bg-white', 'shadow-sm');
+                 firstBtn.classList.remove('text-gray-500');
+             }
+        });
+    </script>
+</body>
+</html>

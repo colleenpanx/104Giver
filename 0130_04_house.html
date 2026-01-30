@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>數據分析轉職戰略報告 | House</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* 天地配色組合 */
+        :root {
+            --heaven-slate: #0f172a;
+            --accent-blue: #38bdf8;
+            --accent-orange: #fb923c;
+            --earth-white: #ffffff;
+            --bg-light: #f8fafc;
+        }
+
+        body {
+            font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
+            background-color: var(--bg-light);
+            color: #334155;
+        }
+
+        .section-header {
+            border-left: 4px solid var(--accent-blue);
+            padding-left: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            border: 1px solid #f1f5f9;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin: auto;
+            height: 350px;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .comparison-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .box-before {
+            background-color: #f1f5f9;
+            border-radius: 12px;
+            padding: 1.5rem;
+            border-top: 4px solid #94a3b8;
+        }
+
+        .box-after {
+            background-color: #f0f9ff;
+            border-radius: 12px;
+            padding: 1.5rem;
+            border-top: 4px solid var(--accent-blue);
+        }
+
+        .diag-pill {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        /* 導覽列與頁尾顏色對齊網站風格 */
+        header, footer {
+            background-color: var(--heaven-slate);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 天 (Heaven): 核心宣告 -->
+    <header class="py-16 px-4 text-center">
+        <div class="max-w-4xl mx-auto space-y-4">
+            <h1 class="text-4xl md:text-5xl font-black tracking-tight">數據分析轉職戰略報告</h1>
+            <p class="text-sky-400 font-bold tracking-widest uppercase text-sm">Resume & Portfolio Audit for House</p>
+            <div class="w-16 h-1 bg-orange-500 mx-auto mt-6"></div>
+            <p class="text-slate-400 text-lg mt-8 leading-relaxed max-w-2xl mx-auto">
+                你具備應用數學的底子與強大的商業實戰經驗。這份報告將協助你將過往的「業務優勢」轉化為「數據洞察」，精準鎖定高價值的分析職缺。
+            </p>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 py-12">
+
+        <!-- 1. 履歷文字升級 (STAR 原則) -->
+        <section class="mb-16">
+            <div class="section-header">
+                <h2 class="text-3xl font-black text-slate-800">1. 履歷文字升級 (STAR 原則)</h2>
+                <p class="text-slate-500 mt-2">將日常職責轉化為量化成果，這是在轉職數據崗位時最關鍵的「價值對齊」。</p>
+            </div>
+
+            <div class="space-y-8">
+                <!-- Case A: E-commerce -->
+                <div class="card">
+                    <h3 class="text-xl font-bold mb-6 text-slate-800 flex items-center gap-2">
+                        <span class="text-2xl">🛍️</span> 核心職績 A：電商通路與運籌
+                    </h3>
+                    <div class="comparison-grid">
+                        <div class="box-before">
+                            <span class="diag-pill bg-slate-200 text-slate-600">優化前 (Before)</span>
+                            <p class="text-sm text-slate-500 leading-relaxed italic">「負責電商平台經營與全通路策略，結合數據監控優化流程，帶動營業額成長與通路開發。」</p>
+                        </div>
+                        <div class="box-after">
+                            <span class="diag-pill bg-blue-100 text-blue-600">優化後 (After)</span>
+                            <p class="text-sm text-blue-900 leading-relaxed font-medium">「主導多通路成長計畫，透過 Python 整合異質數據源實現自動化監控，成功推動年營業額成長 600%；並建立標準化 SOP 與自動化表單，降低 70% 營運人力成本。」</p>
+                        </div>
+                    </div>
+                    <div class="mt-6 p-5 bg-slate-50 rounded-xl border-l-4 border-orange-400">
+                        <h4 class="font-bold text-sm text-slate-800 mb-2">💡 診斷說明：為何這樣改？</h4>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            原敘述過於籠統（營運、監控、成長）。優化後採用 <span class="text-blue-600 font-bold">量化指標 (600% / 70%)</span> 建立即視感，並強調 <span class="text-blue-600 font-bold">Python 自動化</span> 的手段。這能證明你不只是「做業務」，而是能「設計自動化系統來優化業務」。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Case B: Admin Automation -->
+                <div class="card">
+                    <h3 class="text-xl font-bold mb-6 text-slate-800 flex items-center gap-2">
+                        <span class="text-2xl">🏛️</span> 核心職績 B：行政流程與資料管理
+                    </h3>
+                    <div class="comparison-grid">
+                        <div class="box-before">
+                            <span class="diag-pill bg-slate-200 text-slate-600">優化前 (Before)</span>
+                            <p class="text-sm text-slate-500 leading-relaxed italic">「管理三千多名人員資料，處理誤餐費請領，並建立表單優化行政流程，減少數據錯誤。」</p>
+                        </div>
+                        <div class="box-after">
+                            <span class="diag-pill bg-blue-100 text-blue-600">優化後 (After)</span>
+                            <p class="text-sm text-blue-900 leading-relaxed font-medium">「管理 3,000+ 人員動態資料庫，自主開發 Python 資料處理腳本取代人工計算，實現請領流程 0 錯誤率；平均每月減少 40 小時行政處理工時，將工作週期縮短 80%。」</p>
+                        </div>
+                    </div>
+                    <div class="mt-6 p-5 bg-slate-50 rounded-xl border-l-4 border-orange-400">
+                        <h4 class="font-bold text-sm text-slate-800 mb-2">💡 診斷說明：為何這樣改？</h4>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            「行政」常被視為低技術含量。透過將其包裝為 <span class="text-blue-600 font-bold">Data Governance (資料治理)</span> 與 <span class="text-blue-600 font-bold">Process Automation (流程自動化)</span>，這段經歷就從雜事變成了「展示自動化工程思維」的最佳證言。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. 作品集技術診斷室 -->
+        <section class="mb-16">
+            <div class="section-header">
+                <h2 class="text-3xl font-black text-slate-800">2. 作品集技術診斷室</h2>
+                <p class="text-slate-500 mt-2">目前的專案已展現技術熱誠，但若要對標中高階分析師，需要補足「容錯性」與「商業價值」的論述。</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- 診斷 1: ETL -->
+                <div class="card flex flex-col">
+                    <div class="flex justify-between items-start mb-6">
+                        <h4 class="text-lg font-black text-slate-800">ETL 自動化資料倉儲</h4>
+                        <span class="text-[10px] bg-orange-100 text-orange-600 px-2 py-1 rounded font-bold uppercase">Critical Gap</span>
+                    </div>
+                    <div class="space-y-4 flex-grow">
+                        <div class="flex items-start gap-3">
+                            <span class="text-red-500 mt-1">⚠️</span>
+                            <p class="text-sm text-slate-600"><span class="font-bold text-slate-800">現狀：</span>強調「一鍵產出」，但未說明如何處理髒資料。</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-green-500 mt-1">✅</span>
+                            <div class="text-sm text-slate-600">
+                                <span class="font-bold text-slate-800">詳述優化方向：</span>
+                                <ul class="list-disc pl-4 mt-2 space-y-1">
+                                    <li>新增 <span class="text-blue-600">Data Validation (資料驗證)</span> 層：展示如何檢測 Schema 變更、空值處理與型別轉換。</li>
+                                    <li>設計「監控日誌 (Logging)」：當 ETL 失敗時，系統如何回傳錯誤，這展示了你在生產環境的工程力。</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 診斷 2: Kaggle -->
+                <div class="card flex flex-col">
+                    <div class="flex justify-between items-start mb-6">
+                        <h4 class="text-lg font-black text-slate-800">ML 模型預測專案</h4>
+                        <span class="text-[10px] bg-blue-100 text-blue-600 px-2 py-1 rounded font-bold uppercase">Expertise Boost</span>
+                    </div>
+                    <div class="space-y-4 flex-grow">
+                        <div class="flex items-start gap-3">
+                            <span class="text-red-500 mt-1">⚠️</span>
+                            <p class="text-sm text-slate-600"><span class="font-bold text-slate-800">現狀：</span>側重模型準確率與 Stack，但較少商業邏輯。分析師的核心價值是「解釋」。</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-green-500 mt-1">✅</span>
+                            <div class="text-sm text-slate-600">
+                                <span class="font-bold text-slate-800">詳述優化方向：</span>
+                                <ul class="list-disc pl-4 mt-2 space-y-1">
+                                    <li>強化 <span class="text-blue-600">特徵重要性 (Feature Importance)</span> 解說：解釋為什麼某個標籤（如：帳戶餘額）會導致客戶流失，並給予對應的商業建議。</li>
+                                    <li>增加 <span class="text-blue-600">SHAP 分析</span>：展示對模型可解釋性 (XAI) 的掌握度，這對金融與零售業極為重要。</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. 綜合能力與戰略 -->
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+             <div class="card">
+                <h3 class="text-2xl font-black text-slate-800 mb-8">綜合能力分析 (80/20 法則)</h3>
+                <div class="chart-container">
+                    <canvas id="radarChart"></canvas>
+                </div>
+                <p class="text-[10px] text-center text-slate-400 mt-4 italic">分析基於：應用數學基礎、多年 ERP 經驗與 Python 自學實作</p>
+             </div>
+             <div class="space-y-6">
+                <div class="section-header">
+                    <h3 class="text-2xl font-black text-slate-800">職涯攻防戰略</h3>
+                    <p class="text-slate-500 mt-2">根據你的背景，我建議優先鎖定以下三大切入點：</p>
+                </div>
+                <div class="grid gap-4">
+                    <div class="p-4 bg-white border border-slate-100 rounded-xl shadow-sm">
+                        <span class="font-bold text-slate-900 block">1. 核心攻擊區：ERP 原廠或 SI 加值商</span>
+                        <p class="text-xs text-slate-500 mt-1">最快轉職路徑。將你的 ERP 顧問經驗直接升級為「數據導入分析師」。</p>
+                    </div>
+                    <div class="p-4 bg-white border border-slate-100 rounded-xl shadow-sm">
+                        <span class="font-bold text-slate-900 block">2. 穩定增長區：新零售與電商 Data Analyst</span>
+                        <p class="text-xs text-slate-500 mt-1">利用「業績成長 6 倍」的故事線，對齊電商對 Growth Analyst 的強烈需求。</p>
+                    </div>
+                    <div class="p-4 bg-white border border-slate-100 rounded-xl shadow-sm">
+                        <span class="font-bold text-slate-900 block">3. 潛力跳板：Fintech 風控數據分析</span>
+                        <p class="text-xs text-slate-500 mt-1">結合應數背景與 Python 研究，主攻風險控管或交易策略輔助分析。</p>
+                    </div>
+                </div>
+             </div>
+        </section>
+
+    </main>
+
+    <!-- 地 (Earth): 行動呼籲 -->
+    <footer class="py-20 px-4 text-center">
+        <div class="max-w-4xl mx-auto space-y-8">
+            <h3 class="text-3xl font-black mb-4">下一步行動</h3>
+            <p class="text-slate-400 max-w-2xl mx-auto leading-relaxed">
+                你的作品集與學術背景已經為你打下 80 分的基礎。最後的 20 分在於**「如何講述數據故事」**。請根據本報告的建議修改履歷文字，並將 ETL 專案的「容錯與品質檢核」細節補齊。
+            </p>
+            <div class="pt-8">
+                <p class="text-sm font-bold text-sky-400 uppercase tracking-widest">相信數據，更要相信你的商務洞察。</p>
+            </div>
+            <div class="pt-12 border-t border-slate-800 text-xs text-slate-500">
+                2026/01/30 104 履歷診療室 Giver | Colleen Pan 報告建議
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- Radar Chart ---
+        const ctx = document.getElementById('radarChart').getContext('2d');
+        
+        function wrapLabel(str, maxLen = 16) {
+            if (str.length <= maxLen) return str;
+            const words = str.split('');
+            const lines = [];
+            let currentLine = "";
+            words.forEach(char => {
+                if (currentLine.length < maxLen) {
+                    currentLine += char;
+                } else {
+                    lines.push(currentLine);
+                    currentLine = char;
+                }
+            });
+            lines.push(currentLine);
+            return lines;
+        }
+
+        new Chart(ctx, {
+            type: 'radar',
+            data: {
+                labels: [
+                    wrapLabel('數據建模能力'),
+                    wrapLabel('Python/ETL實作'),
+                    wrapLabel('商務敏銳度'),
+                    wrapLabel('數據敘事力'),
+                    wrapLabel('自動化思維'),
+                    wrapLabel('專案管理/溝通')
+                ],
+                datasets: [{
+                    label: 'House 實力指標',
+                    data: [85, 90, 95, 68, 92, 85],
+                    backgroundColor: 'rgba(56, 189, 248, 0.15)',
+                    borderColor: '#38bdf8',
+                    borderWidth: 2,
+                    pointBackgroundColor: '#0f172a',
+                    pointBorderColor: '#fff',
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                let label = tooltipItems[0].chart.data.labels[tooltipItems[0].dataIndex];
+                                return Array.isArray(label) ? label.join('') : label;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    r: {
+                        angleLines: { color: '#f1f5f9' },
+                        grid: { color: '#f1f5f9' },
+                        pointLabels: {
+                            font: { size: 11, weight: 'bold' },
+                            color: '#64748b'
+                        },
+                        ticks: { display: false },
+                        suggestedMin: 0,
+                        suggestedMax: 100
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

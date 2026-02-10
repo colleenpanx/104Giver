@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>江先生履歷健診與面試攻略戰情室</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap');
+        body { font-family: 'Noto Sans TC', sans-serif; }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container { height: 350px; }
+        }
+        .card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .transition-all-300 {
+            transition: all 0.3s ease-in-out;
+        }
+    </style>
+    <!-- Chosen Palette: "Calm Professional" - Slate backgrounds (neutral), White cards (clean), Teal/Emerald accents (growth/success), Amber warning (caution). Designed to reduce anxiety and focus on constructive action. -->
+    
+    <!-- Application Structure Plan: 
+         1. Header: Immediate context and goal setting (Target: Nansheng Enterprise).
+         2. Executive Summary (Dashboard): High-level view of current status vs. potential. Uses charts to visually demonstrate the "Stability" argument.
+         3. The Diagnosis (Interactive "Fix It"): Focuses on the critical error (Job Title) and allows user to toggle between "Wrong" and "Right" to see the impact.
+         4. Asset Transformation (Skill Translator): Interactive cards that teach the user how to verbally reframe their Chef experience into Factory terms.
+         5. The Narrative Builder (Autobiography): A step-by-step wizard guide for writing the bio, breaking it down into 4 digestible parts.
+         6. Interview Simulator: Interactive Q&A cards to prep for the specific "hard questions" identified in the report.
+         This structure moves from "Understanding the Problem" -> "Visualizing the Assets" -> "Fixing the Content" -> "Prepping for the Meeting".
+    -->
+
+    <!-- Visualization & Content Choices:
+         1. Relevance Gauge (Chart.js Doughnut): Goal -> Inform/Motivate. Shows the jump in "HR Interest" by making the suggested changes. Justification: Gamifies the improvement process.
+         2. Tenure Comparison (Chart.js Bar): Goal -> Compare. Visually dwarfs the current 1-year chef role with the 8-year factory role. Justification: Visual proof that the user IS a factory veteran, not a junior chef.
+         3. Skill Cards (HTML/JS): Goal -> Change/Teach. Click to reveal the "Factory Translation" of a "Chef Skill". Justification: Active learning helps the user remember these points for the interview.
+         4. Before/After Toggles (HTML/JS): Goal -> Compare. Direct text comparison for Job Titles and Bio. Justification: Shows concrete examples of what to write.
+         Confirming NO SVG graphics used. NO Mermaid JS used.
+    -->
+    
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- Navigation / Header -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold text-slate-700">🚀 履歷診療戰情室</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <button onclick="scrollToSection('dashboard')" class="text-slate-500 hover:text-emerald-600 px-3 py-2 rounded-md text-sm font-medium">總覽分析</button>
+                    <button onclick="scrollToSection('strategy')" class="text-slate-500 hover:text-emerald-600 px-3 py-2 rounded-md text-sm font-medium">策略優化</button>
+                    <button onclick="scrollToSection('interview')" class="text-slate-500 hover:text-emerald-600 px-3 py-2 rounded-md text-sm font-medium">面試模擬</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12">
+
+        <!-- Section 1: Introduction & Goal -->
+        <section class="text-center space-y-4">
+            <h1 class="text-3xl md:text-4xl font-bold text-slate-900">目標職缺：南勝企業 - 作業員</h1>
+            <p class="max-w-3xl mx-auto text-lg text-slate-600">
+                本儀表板針對江先生（龍龍）的履歷進行深度健檢。目前履歷呈現出「職涯方向不明確」的風險，但您擁有長達 8 年的製造業資歷，這是錄取的絕對關鍵。以下將透過互動式分析，協助您將履歷轉化為 HR 眼中的「即戰力」。
+            </p>
+            <div class="flex justify-center gap-4 mt-4">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-emerald-100 text-emerald-800">核心優勢：8年穩定度</span>
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-amber-100 text-amber-800">需修正：求職意向</span>
+            </div>
+        </section>
+
+        <!-- Section 2: Dashboard & Visual Analysis -->
+        <section id="dashboard" class="space-y-6">
+            <div class="border-l-4 border-emerald-500 pl-4">
+                <h2 class="text-2xl font-bold text-slate-800">現況診斷與潛力分析</h2>
+                <p class="text-slate-600 mt-1">
+                    此區域將您的資歷量化，視覺化呈現為什麼「製造業經驗」是您的最強王牌，以及經過履歷優化後，您的錄取機率將如何大幅提升。
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Chart 1: Match Score Gauge -->
+                <div class="bg-white p-6 rounded-xl shadow-lg card-hover transition-all-300">
+                    <h3 class="text-lg font-semibold text-slate-700 mb-4 text-center">履歷吸睛度預測</h3>
+                    <div class="chart-container">
+                        <canvas id="scoreChart"></canvas>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <p id="score-text" class="text-sm text-slate-500">
+                            目前您的履歷因「外送/司機」意向干擾，HR 興趣較低。點擊下方按鈕預覽優化效果。
+                        </p>
+                        <button onclick="toggleOptimization()" id="optimize-btn" class="mt-3 bg-emerald-600 text-white px-4 py-2 rounded-lg hover:bg-emerald-700 transition">
+                            執行優化策略
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Chart 2: Tenure Comparison -->
+                <div class="bg-white p-6 rounded-xl shadow-lg card-hover transition-all-300">
+                    <h3 class="text-lg font-semibold text-slate-700 mb-4 text-center">您的最強王牌：資歷對比</h3>
+                    <div class="chart-container">
+                        <canvas id="tenureChart"></canvas>
+                    </div>
+                    <p class="mt-4 text-sm text-slate-500 text-center">
+                        這張圖表說明一切。相比於不到 1 年的廚師經歷，您的 8 年工廠資歷證明了極高的「穩定性」，這正是南勝企業最看重的。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Strategic Optimization (The "How-To") -->
+        <section id="strategy" class="space-y-8">
+            <div class="border-l-4 border-blue-500 pl-4">
+                <h2 class="text-2xl font-bold text-slate-800">履歷優化策略</h2>
+                <p class="text-slate-600 mt-1">
+                    這裡提供具體的修改建議。我們將針對「求職條件」、「工作經歷描述」與「自傳」三大區塊進行重組，消除 HR 的疑慮並放大您的優勢。
+                </p>
+            </div>
+
+            <!-- Strategy 1: Job Title Fix -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="bg-slate-100 px-6 py-4 border-b border-slate-200 flex justify-between items-center flex-wrap gap-2">
+                    <h3 class="font-bold text-lg text-slate-700">策略一：職涯目標一致性校正</h3>
+                    <span class="text-xs font-mono bg-red-100 text-red-600 px-2 py-1 rounded">關鍵修正點</span>
+                </div>
+                <div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="space-y-2 opacity-50 filter grayscale" id="before-title">
+                        <h4 class="font-semibold text-red-500">❌ 修改前 (現況)</h4>
+                        <div class="bg-slate-50 p-4 rounded border border-slate-200 text-sm">
+                            <p><strong>希望職稱：</strong> 職業小客車、外送員</p>
+                            <p><strong>希望產業：</strong> 運輸相關業、餐飲業</p>
+                            <p class="mt-2 text-red-600 text-xs">⚠️ HR 觀感：只是來過水，隨時會跑去開車。</p>
+                        </div>
+                    </div>
+                    <div class="space-y-2 relative" id="after-title">
+                        <div class="absolute -top-3 -right-3 text-4xl">✨</div>
+                        <h4 class="font-semibold text-emerald-600">✅ 修改後 (建議)</h4>
+                        <div class="bg-emerald-50 p-4 rounded border border-emerald-200 text-sm">
+                            <p><strong>希望職稱：</strong> <span class="font-bold text-emerald-800">生產線作業員、組裝組立人員</span></p>
+                            <p><strong>希望產業：</strong> <span class="font-bold text-emerald-800">製造業、傳統產業</span></p>
+                            <p class="mt-2 text-emerald-700 text-xs">👍 HR 觀感：目標明確，真心想回製造業發展。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Strategy 2: Skill Translation (Chef to Factory) -->
+            <div class="bg-white rounded-xl shadow-md p-6">
+                <h3 class="font-bold text-lg text-slate-700 mb-4">策略二：經驗轉化翻譯機 (點擊卡片翻轉)</h3>
+                <p class="text-sm text-slate-600 mb-6">您目前的廚師經驗看似無關，但其實隱含了工廠重視的特質。點擊下方的「廚師技能」卡片，看看如何用「工廠語言」說服 HR。</p>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <!-- Card 1 -->
+                    <div class="perspective-1000 h-40 cursor-pointer group" onclick="flipCard(this)">
+                        <div class="card-inner relative w-full h-full text-center transition-transform duration-500 transform-style-3d">
+                            <div class="card-front absolute w-full h-full bg-orange-50 border border-orange-200 rounded-lg flex flex-col items-center justify-center p-4 backface-hidden">
+                                <div class="text-3xl mb-2">👨‍🍳</div>
+                                <h4 class="font-bold text-orange-800">冷檯廚師經驗</h4>
+                                <p class="text-xs text-orange-600 mt-1">注重衛生、食材保鮮</p>
+                            </div>
+                            <div class="card-back absolute w-full h-full bg-blue-50 border border-blue-200 rounded-lg flex flex-col items-center justify-center p-4 backface-hidden rotate-y-180">
+                                <div class="text-3xl mb-2">🏭</div>
+                                <h4 class="font-bold text-blue-800">5S 環境管理</h4>
+                                <p class="text-xs text-blue-600 mt-1">具備SOP執行力與環境整潔觀念</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="perspective-1000 h-40 cursor-pointer group" onclick="flipCard(this)">
+                        <div class="card-inner relative w-full h-full text-center transition-transform duration-500 transform-style-3d">
+                            <div class="card-front absolute w-full h-full bg-orange-50 border border-orange-200 rounded-lg flex flex-col items-center justify-center p-4 backface-hidden">
+                                <div class="text-3xl mb-2">🔥</div>
+                                <h4 class="font-bold text-orange-800">出餐尖峰時刻</h4>
+                                <p class="text-xs text-orange-600 mt-1">高壓下快速出餐</p>
+                            </div>
+                            <div class="card-back absolute w-full h-full bg-blue-50 border border-blue-200 rounded-lg flex flex-col items-center justify-center p-4 backface-hidden rotate-y-180">
+                                <div class="text-3xl mb-2">⚡</div>
+                                <h4 class="font-bold text-blue-800">產能效率與專注</h4>
+                                <p class="text-xs text-blue-600 mt-1">習慣高強度作業節奏，手腳俐落</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="perspective-1000 h-40 cursor-pointer group" onclick="flipCard(this)">
+                        <div class="card-inner relative w-full h-full text-center transition-transform duration-500 transform-style-3d">
+                            <div class="card-front absolute w-full h-full bg-orange-50 border border-orange-200 rounded-lg flex flex-col items-center justify-center p-4 backface-hidden">
+                                <div class="text-3xl mb-2">🕒</div>
+                                <h4 class="font-bold text-orange-800">廚房久站工作</h4>
+                                <p class="text-xs text-orange-600 mt-1">整天站立切菜備料</p>
+                            </div>
+                            <div class="card-back absolute w-full h-full bg-blue-50 border border-blue-200 rounded-lg flex flex-col items-center justify-center p-4 backface-hidden rotate-y-180">
+                                <div class="text-3xl mb-2">💪</div>
+                                <h4 class="font-bold text-blue-800">完全勝任久站</h4>
+                                <p class="text-xs text-blue-600 mt-1">體力與耐力已通過驗證，無須擔心</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Strategy 3: Autobiography Builder -->
+            <div class="bg-white rounded-xl shadow-md p-6">
+                <h3 class="font-bold text-lg text-slate-700 mb-4">策略三：自傳結構引導精靈</h3>
+                <p class="text-sm text-slate-600 mb-4">不知道自傳怎麼寫？請依照這四段式結構填寫，就能寫出一篇針對性極強的自傳。</p>
+                <div class="flex flex-col md:flex-row gap-4">
+                    <!-- Steps -->
+                    <div class="flex flex-col space-y-2 md:w-1/3">
+                        <button onclick="showBioStep(0)" class="bio-step-btn bg-emerald-100 text-emerald-800 px-4 py-3 rounded-lg text-left font-medium active">1. 開門見山：破題</button>
+                        <button onclick="showBioStep(1)" class="bio-step-btn bg-slate-100 text-slate-600 px-4 py-3 rounded-lg text-left font-medium hover:bg-slate-200">2. 核心價值：穩定性</button>
+                        <button onclick="showBioStep(2)" class="bio-step-btn bg-slate-100 text-slate-600 px-4 py-3 rounded-lg text-left font-medium hover:bg-slate-200">3. 技能特質：證照與態度</button>
+                        <button onclick="showBioStep(3)" class="bio-step-btn bg-slate-100 text-slate-600 px-4 py-3 rounded-lg text-left font-medium hover:bg-slate-200">4. 強烈動機：結尾</button>
+                    </div>
+                    <!-- Content -->
+                    <div class="bg-slate-50 border border-slate-200 rounded-lg p-6 md:w-2/3 min-h-[200px] flex items-center">
+                        <div id="bio-content-0" class="bio-content block animate-fade-in">
+                            <h4 class="font-bold text-slate-800 mb-2">第一段：破題</h4>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                直接點出重點：「具備 8 年以上製造業經驗，熟悉生產線流程與機台操作。」<br>
+                                不要從家庭背景開始寫，HR 想先看到你會什麼。
+                            </p>
+                        </div>
+                        <div id="bio-content-1" class="bio-content hidden animate-fade-in">
+                            <h4 class="font-bold text-slate-800 mb-2">第二段：強調穩定性 (最重要!)</h4>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                描述在「辰鋼企業」任職 8 年的經歷。<br>
+                                重點強調：配合度高、出勤正常、從未因體力或加班問題影響工作。<br>
+                                這段是為了消除 HR 對你目前從事餐飲業的疑慮。
+                            </p>
+                        </div>
+                        <div id="bio-content-2" class="bio-content hidden animate-fade-in">
+                            <h4 class="font-bold text-slate-800 mb-2">第三段：技能與特質</h4>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                結合證照來說故事：<br>
+                                1. **職業駕照**：代表個性細心、守法、重視安全。<br>
+                                2. **中餐丙級**：代表具備 SOP 執行能力與環境整潔 (5S) 觀念。
+                            </p>
+                        </div>
+                        <div id="bio-content-3" class="bio-content hidden animate-fade-in">
+                            <h4 class="font-bold text-slate-800 mb-2">第四段：投遞動機</h4>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                明確表達對「南勝企業」穩定經營的認可。<br>
+                                必須寫出：「已做好久站與配合加班的心理準備」，展現你的決心。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Interview Simulation -->
+        <section id="interview" class="space-y-6">
+            <div class="border-l-4 border-amber-500 pl-4">
+                <h2 class="text-2xl font-bold text-slate-800">面試實戰模擬</h2>
+                <p class="text-slate-600 mt-1">
+                    作業員面試問題通常很直接。這裡整理了必考題與最佳回答，請在面試前反覆練習。
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Q1 -->
+                <div class="bg-white rounded-lg shadow border border-slate-200 overflow-hidden">
+                    <div class="bg-amber-50 px-4 py-3 border-b border-amber-100">
+                        <h4 class="font-bold text-amber-800">🔥 必殺題：你受得了久站跟加班嗎？</h4>
+                    </div>
+                    <div class="p-4 space-y-4">
+                        <p class="text-sm text-slate-600 italic">HR 心理：怕你做兩天就跑掉，因為這真的很累。</p>
+                        <div class="bg-slate-50 p-3 rounded text-sm text-slate-700">
+                            <strong>最佳回答：</strong><br>
+                            「我有 8 年的組合員經驗，當時也是需要在生產線上作業，對於工廠的環境與站立作業非常習慣。加上我現在在廚房工作也是整天站立，體力上完全沒有問題，也願意配合公司訂單需求進行加班。」
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q2 -->
+                <div class="bg-white rounded-lg shadow border border-slate-200 overflow-hidden">
+                    <div class="bg-blue-50 px-4 py-3 border-b border-blue-100">
+                        <h4 class="font-bold text-blue-800">💡 加分題：你會維修機台嗎？</h4>
+                    </div>
+                    <div class="p-4 space-y-4">
+                        <p class="text-sm text-slate-600 italic">HR 心理：找作業員如果有簡易排除故障能力，CP值很高。</p>
+                        <div class="bg-slate-50 p-3 rounded text-sm text-slate-700">
+                            <strong>回答策略：</strong><br>
+                            職缺提到「簡易機台維修」。如果您在辰鋼時期有幫忙排除小故障的經驗（例如卡料排除、基本保養），一定要主動提出！這會讓你從一般作業員升級為「有潛力的技術員」。
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Attire Checklist -->
+                <div class="md:col-span-2 bg-white rounded-lg shadow p-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div class="flex items-center gap-4">
+                        <div class="bg-slate-100 p-3 rounded-full text-2xl">👔</div>
+                        <div>
+                            <h4 class="font-bold text-slate-800">服裝儀容檢查</h4>
+                            <p class="text-xs text-slate-500">第一印象決定 50% 的分數</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-2 text-sm">
+                        <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full">✅ 乾淨 POLO 衫</span>
+                        <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full">✅ 牛仔褲/休閒褲</span>
+                        <span class="px-3 py-1 bg-red-100 text-red-800 rounded-full">❌ 拖鞋/涼鞋</span>
+                        <span class="px-3 py-1 bg-red-100 text-red-800 rounded-full">❌ 過度正式西裝</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer / Action Plan -->
+        <footer class="mt-12 border-t border-slate-200 pt-8 pb-12 text-center">
+            <h3 class="text-xl font-bold text-slate-800 mb-4">今日行動清單</h3>
+            <div class="inline-flex flex-col text-left space-y-2 bg-white p-6 rounded-xl shadow-sm border border-slate-100">
+                <label class="flex items-center space-x-3 cursor-pointer">
+                    <input type="checkbox" class="form-checkbox h-5 w-5 text-emerald-600 rounded">
+                    <span class="text-slate-700">修改 104 履歷希望職稱：加入「作業員」、「組裝人員」</span>
+                </label>
+                <label class="flex items-center space-x-3 cursor-pointer">
+                    <input type="checkbox" class="form-checkbox h-5 w-5 text-emerald-600 rounded">
+                    <span class="text-slate-700">更新工作內容：強調辰鋼 8 年的操作機台細節</span>
+                </label>
+                <label class="flex items-center space-x-3 cursor-pointer">
+                    <input type="checkbox" class="form-checkbox h-5 w-5 text-emerald-600 rounded">
+                    <span class="text-slate-700">重寫自傳：依照四段式結構完成</span>
+                </label>
+            </div>
+            <p class="mt-8 text-sm text-slate-400">
+                2026年2月10日 104 履歷診療室 Giver｜Colleen Pan
+            </p>
+        </footer>
+
+    </main>
+
+    <script>
+        // --- Data & State ---
+        let isOptimized = false;
+
+        // --- Chart 1: Match Score Gauge ---
+        const ctxScore = document.getElementById('scoreChart').getContext('2d');
+        const scoreChart = new Chart(ctxScore, {
+            type: 'doughnut',
+            data: {
+                labels: ['符合度', '差距'],
+                datasets: [{
+                    data: [40, 60], // Initial low score
+                    backgroundColor: ['#cbd5e1', '#f1f5f9'], // Grey initial
+                    borderWidth: 0,
+                    circumference: 180,
+                    rotation: 270,
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '75%',
+                plugins: {
+                    legend: { display: false },
+                    tooltip: { enabled: false },
+                    title: {
+                        display: true,
+                        text: '40%',
+                        position: 'bottom',
+                        color: '#64748b',
+                        font: { size: 32, weight: 'bold', family: "'Noto Sans TC', sans-serif" },
+                        padding: { top: -40, bottom: 20 } // Adjust position
+                    }
+                }
+            },
+            plugins: [{
+                id: 'textCenter',
+                beforeDraw: function(chart) {
+                    // Custom text drawing logic if needed, but Title plugin is often easier for simple gauges
+                }
+            }]
+        });
+
+        // --- Chart 2: Tenure Comparison ---
+        const ctxTenure = document.getElementById('tenureChart').getContext('2d');
+        const tenureChart = new Chart(ctxTenure, {
+            type: 'bar',
+            data: {
+                labels: ['現職：冷檯廚師', '過去：辰鋼企業 (組合員)'],
+                datasets: [{
+                    label: '年資 (年)',
+                    data: [0.8, 8.1],
+                    backgroundColor: ['#fdba74', '#10b981'], // Orange for chef, Green for factory
+                    borderRadius: 6,
+                    barThickness: 50
+                }]
+            },
+            options: {
+                indexAxis: 'y', // Horizontal bar
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        grid: { display: false },
+                        title: { display: true, text: '工作年資 (年)' }
+                    },
+                    y: {
+                        grid: { display: false },
+                        ticks: { font: { size: 14, weight: 'bold' } }
+                    }
+                },
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.raw + ' 年 - ' + (context.raw > 5 ? '極高穩定性 (HR 最愛)' : '經歷尚淺');
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // --- Interaction Logic ---
+
+        // Toggle Optimization
+        function toggleOptimization() {
+            const btn = document.getElementById('optimize-btn');
+            const scoreText = document.getElementById('score-text');
+            
+            if (!isOptimized) {
+                // Update State to Optimized
+                scoreChart.data.datasets[0].data = [90, 10];
+                scoreChart.data.datasets[0].backgroundColor = ['#10b981', '#d1fae5']; // Green
+                scoreChart.options.plugins.title.text = '90%';
+                scoreChart.options.plugins.title.color = '#059669';
+                scoreChart.update();
+
+                scoreText.innerHTML = "修改後：您的履歷將展現<span class='font-bold text-emerald-600'>高穩定度</span>與<span class='font-bold text-emerald-600'>明確動機</span>，極大提升面試邀約率！";
+                btn.textContent = "還原初始狀態";
+                btn.className = "mt-3 bg-slate-500 text-white px-4 py-2 rounded-lg hover:bg-slate-600 transition";
+                
+                // Highlight strategy section
+                document.getElementById('after-title').classList.add('ring-4', 'ring-emerald-200');
+                setTimeout(() => document.getElementById('after-title').classList.remove('ring-4', 'ring-emerald-200'), 1000);
+            } else {
+                // Revert
+                scoreChart.data.datasets[0].data = [40, 60];
+                scoreChart.data.datasets[0].backgroundColor = ['#cbd5e1', '#f1f5f9'];
+                scoreChart.options.plugins.title.text = '40%';
+                scoreChart.options.plugins.title.color = '#64748b';
+                scoreChart.update();
+
+                scoreText.textContent = "目前您的履歷因「外送/司機」意向干擾，HR 興趣較低。點擊下方按鈕預覽優化效果。";
+                btn.textContent = "執行優化策略";
+                btn.className = "mt-3 bg-emerald-600 text-white px-4 py-2 rounded-lg hover:bg-emerald-700 transition";
+            }
+            isOptimized = !isOptimized;
+        }
+
+        // Flip Card Logic
+        function flipCard(card) {
+            const inner = card.querySelector('.card-inner');
+            if (inner.style.transform === 'rotateY(180deg)') {
+                inner.style.transform = 'rotateY(0deg)';
+            } else {
+                inner.style.transform = 'rotateY(180deg)';
+            }
+        }
+
+        // Bio Wizard Logic
+        function showBioStep(index) {
+            // Update Buttons
+            const buttons = document.querySelectorAll('.bio-step-btn');
+            buttons.forEach((btn, i) => {
+                if (i === index) {
+                    btn.classList.remove('bg-slate-100', 'text-slate-600');
+                    btn.classList.add('bg-emerald-100', 'text-emerald-800', 'active');
+                } else {
+                    btn.classList.add('bg-slate-100', 'text-slate-600');
+                    btn.classList.remove('bg-emerald-100', 'text-emerald-800', 'active');
+                }
+            });
+
+            // Update Content
+            const contents = document.querySelectorAll('.bio-content');
+            contents.forEach((content, i) => {
+                if (i === index) {
+                    content.classList.remove('hidden');
+                } else {
+                    content.classList.add('hidden');
+                }
+            });
+        }
+
+        // Scroll Logic
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Add 3D transform styles dynamically for card flip
+        const style = document.createElement('style');
+        style.innerHTML = `
+            .perspective-1000 { perspective: 1000px; }
+            .transform-style-3d { transform-style: preserve-3d; }
+            .backface-hidden { backface-visibility: hidden; }
+            .rotate-y-180 { transform: rotateY(180deg); }
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(5px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            .animate-fade-in { animation: fadeIn 0.3s ease-out forwards; }
+        `;
+        document.head.appendChild(style);
+
+    </script>
+</body>
+</html>

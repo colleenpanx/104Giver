@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>履歷健檢報告：蔡國華 William Tsai</title>
+    <title>履歷健檢策略報告：蔡國華 William Tsai</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
@@ -30,17 +30,17 @@
             font-family: 'Noto Sans TC', sans-serif;
             background-color: #f8fafc;
             overflow-x: hidden;
+            line-height: 1.7;
         }
 
-        /* 響應式圖表容器高度 */
         .chart-container {
             position: relative;
             width: 100%;
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
-            height: 300px; /* 手機版預設高度 */
-            max-height: 400px;
+            height: 320px; 
+            max-height: 450px;
         }
 
         @media (min-width: 768px) {
@@ -66,123 +66,121 @@
             transform: translateX(-50%);
             z-index: 0;
         }
+
+        .readable-text {
+            font-size: 1.1rem;
+        }
+        @media (min-width: 768px) {
+            .readable-text {
+                font-size: 1.2rem;
+            }
+        }
     </style>
 </head>
 <body class="text-slate-800 antialiased">
 
-    <!-- Header Section: 調整手機版字級與間距 -->
-    <header class="bg-gradient-to-r from-brand-dark to-brand-primary text-white py-8 md:py-12 px-4 shadow-xl relative overflow-hidden">
+    <header class="bg-gradient-to-r from-brand-dark to-brand-primary text-white py-12 md:py-20 px-4 shadow-xl relative overflow-hidden">
         <div class="max-w-6xl mx-auto relative z-10">
             <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
-                <div class="mb-6 md:mb-0">
-                    <div class="inline-block bg-brand-gold text-brand-dark font-bold px-3 py-1 rounded-full text-xs mb-4 shadow-lg">
-                        ★ 金鼎獎得主
+                <div class="mb-10 md:mb-0">
+                    <div class="inline-block bg-brand-gold text-brand-dark font-bold px-5 py-2 rounded-full text-sm mb-6 shadow-lg animate-bounce">
+                        ★ 金鼎獎得主現身
                     </div>
-                    <h1 class="text-3xl md:text-5xl font-black tracking-tight mb-2">履歷健檢策略報告</h1>
-                    <h2 class="text-lg md:text-2xl font-medium text-brand-accent">蔡國華 William Tsai ｜ 資深公關轉型專案</h2>
+                    <h1 class="text-4xl md:text-6xl font-black tracking-tight mb-4">履歷健檢策略報告</h1>
+                    <h2 class="text-xl md:text-3xl font-medium text-brand-accent">蔡國華 William Tsai ｜ 資深公關轉型價值重塑</h2>
                 </div>
-                <div class="bg-white/10 p-4 md:p-6 rounded-lg backdrop-blur-sm border border-white/20">
-                    <p class="text-xs opacity-80 mb-1">目標職缺</p>
-                    <p class="text-xl md:text-2xl font-bold">品牌公關 / 文案主管</p>
-                    <div class="mt-2 text-[10px] md:text-xs bg-brand-primary px-2 py-1 rounded">專注：文化轉譯 & 策略佈局</div>
+                <div class="bg-white/10 p-6 md:p-10 rounded-2xl backdrop-blur-md border border-white/20 shadow-2xl">
+                    <p class="text-base opacity-90 mb-2">核心投遞職缺</p>
+                    <p class="text-3xl md:text-4xl font-bold mb-2">品牌公關 / 文案主管</p>
+                    <div class="mt-4 text-sm md:text-base bg-brand-primary px-4 py-2 rounded-lg inline-block font-bold">策略定位：文化轉譯 ✕ AI 效能 ✕ 危機管理</div>
                 </div>
             </div>
         </div>
-        <div class="absolute top-0 right-0 -mt-10 -mr-10 w-64 h-64 bg-brand-accent rounded-full opacity-20 blur-3xl"></div>
+        <div class="absolute top-0 right-0 -mt-20 -mr-20 w-96 h-96 bg-brand-accent rounded-full opacity-10 blur-3xl"></div>
     </header>
 
-    <main class="max-w-6xl mx-auto px-4 py-8 md:py-12 space-y-12 md:space-y-16">
+    <main class="max-w-6xl mx-auto px-4 py-12 md:py-20 space-y-20 md:space-y-32">
 
-        <!-- 核心資產盤點 (保留原始文案不改動) -->
         <section>
-            <div class="text-center mb-8 md:mb-10">
-                <h3 class="text-xl md:text-2xl font-bold text-brand-dark mb-3">核心資產盤點</h3>
-                <p class="text-sm md:text-base text-slate-600 max-w-2xl mx-auto">蔡先生擁有極其深厚的文字底蘊與媒體實務經驗。對於公關產業而言，這是難以複製的「內容護城河」。</p>
+            <div class="text-center mb-12 md:mb-16">
+                <h3 class="text-3xl md:text-4xl font-black text-brand-dark mb-6">核心資產盤點</h3>
+                <p class="readable-text text-slate-600 max-w-3xl mx-auto px-2">蔡先生擁有極其深厚的文字底蘊與媒體實務經驗。對於公關產業而言，這是難以複製的「內容護城河」。</p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-                <div class="glass-card rounded-xl p-6 md:p-8 text-center hover:-translate-y-1 transition-transform duration-300 border-t-4 border-brand-primary">
-                    <div class="text-4xl md:text-5xl font-black text-brand-primary mb-2">25<span class="text-2xl">+</span></div>
-                    <div class="text-xs md:text-sm font-bold text-slate-500 uppercase tracking-wide">年傳播資歷</div>
-                    <p class="mt-3 text-slate-600 text-sm">從報社主編到公關顧問，具備完整策略視野。</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass-card rounded-3xl p-10 text-center hover:-translate-y-2 transition-all duration-300 border-t-[12px] border-brand-primary">
+                    <div class="text-6xl md:text-7xl font-black text-brand-primary mb-4">25<span class="text-3xl">yr</span></div>
+                    <div class="text-lg font-bold text-slate-500 uppercase tracking-widest mb-4">年傳播資歷</div>
+                    <p class="text-slate-700 text-lg leading-relaxed">從報社主編到公關顧問，具備完整策略視野。</p>
                 </div>
-                <div class="glass-card rounded-xl p-6 md:p-8 text-center hover:-translate-y-1 transition-transform duration-300 border-t-4 border-brand-gold">
-                    <div class="text-4xl md:text-5xl font-black text-brand-gold mb-2">2</div>
-                    <div class="text-xs md:text-sm font-bold text-slate-500 uppercase tracking-wide">項國家級大獎</div>
-                    <p class="mt-3 text-slate-600 text-sm">金鼎獎 & 省政新聞獎<br>新聞品質的最高肯定。</p>
+                <div class="glass-card rounded-3xl p-10 text-center hover:-translate-y-2 transition-all duration-300 border-t-[12px] border-brand-gold">
+                    <div class="text-6xl md:text-7xl font-black text-brand-gold mb-4">2</div>
+                    <div class="text-lg font-bold text-slate-500 uppercase tracking-widest mb-4">項國家級大獎</div>
+                    <p class="text-slate-700 text-lg leading-relaxed">金鼎獎 & 省政新聞獎<br>新聞品質的最高肯定。</p>
                 </div>
-                <div class="glass-card rounded-xl p-6 md:p-8 text-center hover:-translate-y-1 transition-transform duration-300 border-t-4 border-brand-accent">
-                    <div class="text-4xl md:text-5xl font-black text-brand-accent mb-2">100<span class="text-2xl">%</span></div>
-                    <div class="text-xs md:text-sm font-bold text-slate-500 uppercase tracking-wide">跨界整合力</div>
-                    <p class="mt-3 text-slate-600 text-sm">結合「媒體、飲食文化、導遊」的獨特敘事視角。</p>
+                <div class="glass-card rounded-3xl p-10 text-center hover:-translate-y-2 transition-all duration-300 border-t-[12px] border-brand-accent">
+                    <div class="text-6xl md:text-7xl font-black text-brand-accent mb-4">100<span class="text-3xl">%</span></div>
+                    <div class="text-lg font-bold text-slate-500 uppercase tracking-widest mb-4">跨界整合力</div>
+                    <p class="text-slate-700 text-lg leading-relaxed">結合「媒體、飲食文化、導遊」的獨特敘事視角。</p>
                 </div>
             </div>
         </section>
 
-        <!-- 目標職缺媒合分析 (調整手機版排版) -->
-        <section class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-white rounded-2xl md:rounded-3xl shadow-lg overflow-hidden border border-slate-100">
-            <div class="lg:col-span-5 p-6 md:p-12 bg-slate-50 h-full flex flex-col justify-center">
-                <h3 class="text-xl md:text-2xl font-bold text-brand-dark mb-4">目標職缺媒合分析</h3>
-                <p class="text-sm md:text-base text-slate-600 mb-6">針對您鎖定的三家企業進行職能媒合分析。我們發現您的背景與 <strong class="text-brand-primary">The One</strong> 的定位具備高度共鳴，而公關代理商職缺則需強化數位與工具的融合論述。</p>
-                <ul class="space-y-4">
+        <section class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch bg-white rounded-[2.5rem] shadow-2xl overflow-hidden border border-slate-100">
+            <div class="lg:col-span-5 p-10 md:p-16 bg-slate-50 flex flex-col justify-center">
+                <h3 class="text-3xl md:text-4xl font-black text-brand-dark mb-8">目標職缺媒合分析</h3>
+                <p class="readable-text text-slate-600 mb-10">您的背景與 <strong class="text-brand-primary">The One</strong> 的文藝精神具備極高契合度。針對公關公司，我們建議強調「資深專業 + 科技輔助」的雙軌戰力。</p>
+                <ul class="space-y-8">
                     <li class="flex items-start">
-                        <span class="flex-shrink-0 w-6 h-6 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold text-xs mt-1 mr-3">1</span>
+                        <span class="flex-shrink-0 w-10 h-10 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold text-lg mt-1 mr-5 shadow-lg">1</span>
                         <div>
-                            <strong class="block text-slate-800 text-sm md:text-base">The One (高度媒合)</strong>
-                            <span class="text-xs md:text-sm text-slate-500">文化底蘊與生活提案是核心，您的獲獎背景是極強的說服力。</span>
+                            <strong class="block text-slate-900 text-xl mb-2">The One (最佳契合)</strong>
+                            <span class="text-lg text-slate-600">您的文化厚度能精準轉譯品牌靈魂，是高階品牌提案的不二人選。</span>
                         </div>
                     </li>
                     <li class="flex items-start">
-                        <span class="flex-shrink-0 w-6 h-6 bg-brand-accent text-white rounded-full flex items-center justify-center font-bold text-xs mt-1 mr-3">2</span>
+                        <span class="flex-shrink-0 w-10 h-10 bg-brand-accent text-white rounded-full flex items-center justify-center font-bold text-lg mt-1 mr-5 shadow-lg">2</span>
                         <div>
-                            <strong class="block text-slate-800 text-sm md:text-base">數位工具應用 (具體建議)</strong>
-                            <span class="text-xs md:text-sm text-slate-500">將 AI 工具視為資深文字力與市場速度接軌的「催化劑」，向主管展示新工具如何優化高品質內容產出。</span>
-                        </div>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="flex-shrink-0 w-6 h-6 bg-brand-gold text-white rounded-full flex items-center justify-center font-bold text-xs mt-1 mr-3">3</span>
-                        <div>
-                            <strong class="block text-slate-800 text-sm md:text-base">擁抱 AI 成為助攻</strong>
-                            <span class="text-xs md:text-sm text-slate-500">強調文字底座厚度，並夾帶快速工具（如 ChatGPT, Gemini）成為強力的執行助攻。</span>
+                            <strong class="block text-slate-900 text-xl mb-2">數位工具應用建議</strong>
+                            <span class="text-lg text-slate-600">展現如何將 AI 轉化為「文字老將的強力助攻」，向主管宣告您已擁抱現代生產力。</span>
                         </div>
                     </li>
                 </ul>
             </div>
-            <div class="lg:col-span-7 p-4 md:p-8">
+            <div class="lg:col-span-7 p-8 md:p-14 flex flex-col justify-center">
                 <div class="chart-container">
                     <canvas id="jobFitChart"></canvas>
                 </div>
-                <div class="mt-4 text-center text-[10px] text-slate-400">
-                    * 媒合指數基於資歷相關性、文化契合度與技能重疊率分析
+                <div class="mt-8 text-center text-sm text-slate-400 font-medium">
+                    * 數據基於資歷厚度、數位適應力與品牌風格一致性分析
                 </div>
             </div>
         </section>
 
-        <!-- 技能優勢與缺口 (響應式雷達圖) -->
         <section>
-            <div class="text-center mb-8 md:mb-10">
-                <h3 class="text-xl md:text-2xl font-bold text-brand-dark mb-3">技能優勢與數位轉型缺口</h3>
-                <p class="text-sm md:text-base text-slate-600 max-w-2xl mx-auto">您的「文字深度」與「策略思維」遠超市場平均，結合時下科技將能產出更強大的助攻力。</p>
+            <div class="text-center mb-12 md:mb-16">
+                <h3 class="text-3xl md:text-4xl font-black text-brand-dark mb-6">技能優勢與轉型關鍵</h3>
+                <p class="readable-text text-slate-600 max-w-3xl mx-auto">當「金鼎獎底蘊」遇上「AI 效能工具」，將產生市場上極為罕見的職能組合。</p>
             </div>
 
-            <div class="bg-white rounded-2xl md:rounded-3xl shadow-lg p-4 md:p-12">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+            <div class="bg-white rounded-[2.5rem] shadow-2xl p-8 md:p-16">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
                     <div class="chart-container">
                         <canvas id="skillRadarChart"></canvas>
                     </div>
-                    <div class="space-y-4 md:space-y-6">
-                        <div class="flex p-4 bg-blue-50 rounded-lg border-l-4 border-brand-primary">
-                            <div class="mr-3 text-xl">💪</div>
+                    <div class="space-y-8">
+                        <div class="flex p-6 bg-blue-50 rounded-3xl border-l-[10px] border-brand-primary shadow-sm">
+                            <div class="mr-5 text-4xl">💪</div>
                             <div>
-                                <h4 class="font-bold text-brand-dark text-sm md:text-base">既有優勢：內容為王</h4>
-                                <p class="text-xs md:text-sm text-slate-600 mt-1">您的深度寫作能力是資深公關的靈魂。這在品牌溝通時是穩定輸出的品質保證。</p>
+                                <h4 class="font-bold text-brand-dark text-xl mb-3">深度寫作力：品牌靈魂</h4>
+                                <p class="text-lg text-slate-700">在訊息破碎的時代，您的深度敘事是品牌最稀缺的資產，能建立深刻的受眾共鳴。</p>
                             </div>
                         </div>
-                        <div class="flex p-4 bg-cyan-50 rounded-lg border-l-4 border-brand-accent">
-                            <div class="mr-3 text-xl">⚡</div>
+                        <div class="flex p-6 bg-cyan-50 rounded-3xl border-l-[10px] border-brand-accent shadow-sm">
+                            <div class="mr-5 text-4xl">⚡</div>
                             <div>
-                                <h4 class="font-bold text-brand-dark text-sm md:text-base">轉型機會：擁抱 AI 助攻</h4>
-                                <p class="text-xs md:text-sm text-slate-600 mt-1">展示對 <span class="font-bold text-brand-primary">AI 工具</span> 的掌握，讓主管知道你擁有底蘊並能藉助工具達成強力的執行效能。</p>
+                                <h4 class="font-bold text-brand-dark text-xl mb-3">AI 助攻：效能翻倍</h4>
+                                <p class="text-lg text-slate-700">善用 <span class="font-bold text-brand-primary">ChatGPT, Gemini</span> 輔助初稿發想與趨勢觀測，讓專業經驗能在快節奏市場中迅速釋放。</p>
                             </div>
                         </div>
                     </div>
@@ -190,126 +188,77 @@
             </div>
         </section>
 
-        <!-- 五步優化戰略 (手機版簡化連接線) -->
-        <section class="max-w-4xl mx-auto">
-            <div class="text-center mb-10 md:mb-12">
-                <h3 class="text-xl md:text-2xl font-bold text-brand-dark">五步履歷優化戰略</h3>
-                <p class="text-sm md:text-base text-slate-600 mt-2">從「傳統媒體人」轉身為「擁抱 AI 的品牌策略家」</p>
-            </div>
+        <section class="bg-slate-100 rounded-[2.5rem] p-8 md:p-16 shadow-inner">
+            <h3 class="text-3xl md:text-4xl font-black text-center mb-6 text-brand-dark">實戰演練：經歷描述優化</h3>
+            <p class="text-center text-slate-500 mb-12 text-lg">將過往經歷「戰略化」，讓 HR 第一眼看到您的價值。</p>
 
-            <div class="relative space-y-8 md:space-y-12">
-                <!-- 手機版隱藏中間連接線，避免位移感 -->
-                <div class="hidden md:block step-connector bg-slate-200"></div>
-
-                <!-- Step 1 -->
-                <div class="relative flex flex-col md:flex-row items-center md:justify-between">
-                    <div class="order-2 md:order-1 md:w-5/12 text-center md:text-right p-4">
-                        <h4 class="font-bold text-brand-primary text-base md:text-lg">1. Header 定位重塑</h4>
-                        <p class="text-slate-600 text-xs md:text-sm mt-2">強調「金鼎獎資深媒體人｜品牌公關策略專家」。</p>
+            <div class="grid grid-cols-1 gap-12 md:gap-16">
+                <div class="flex flex-col gap-6">
+                    <div class="bg-white/70 border border-slate-200 rounded-2xl p-6 shadow-sm">
+                        <div class="inline-block bg-red-500 text-white text-xs font-bold px-4 py-1 rounded-full mb-3 uppercase tracking-tighter">案例一：導遊 (原版)</div>
+                        <p class="text-slate-500 italic text-base">"旅客買超過一百萬... 大家都聽我說故事..."</p>
                     </div>
-                    <div class="order-1 md:order-2 md:w-2/12 flex justify-center py-2 relative z-10">
-                        <div class="w-10 h-10 md:w-12 md:h-12 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold text-base md:text-xl shadow-lg border-4 border-white">1</div>
-                    </div>
-                    <div class="order-3 md:w-5/12 p-4 hidden md:block"></div>
-                </div>
-
-                <!-- Step 2 -->
-                <div class="relative flex flex-col md:flex-row items-center md:justify-between">
-                    <div class="order-3 md:order-1 md:w-5/12 p-4 hidden md:block"></div>
-                    <div class="order-1 md:order-2 md:w-2/12 flex justify-center py-2 relative z-10">
-                        <div class="w-10 h-10 md:w-12 md:h-12 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold text-base md:text-xl shadow-lg border-4 border-white">2</div>
-                    </div>
-                    <div class="order-2 md:order-3 md:w-5/12 text-center md:text-left p-4">
-                        <h4 class="font-bold text-brand-primary text-base md:text-lg">2. 導遊經歷轉譯</h4>
-                        <p class="text-slate-600 text-xs md:text-sm mt-2">將其轉化為「高階商務溝通」與「即時應變能力」。</p>
+                    <div class="bg-white border-4 border-brand-accent rounded-2xl p-8 shadow-xl">
+                        <div class="inline-block bg-brand-accent text-brand-dark text-xs font-bold px-4 py-1 rounded-full mb-4 uppercase tracking-tighter">優化版：高階商務溝通</div>
+                        <p class="text-slate-900 font-bold text-xl leading-relaxed">"具備極強的受眾心理洞察，透過議題設定達成單次專案百萬業績。能將複雜品牌價值轉化為高轉換率內容。"</p>
                     </div>
                 </div>
 
-                <!-- Step 3 -->
-                <div class="relative flex flex-col md:flex-row items-center md:justify-between">
-                    <div class="order-2 md:order-1 md:w-5/12 text-center md:text-right p-4">
-                        <h4 class="font-bold text-brand-primary text-base md:text-lg">3. 擁抱 AI 工具助攻</h4>
-                        <p class="text-slate-600 text-xs md:text-sm mt-2">展示運用 AI 輔助分析，證明具備「底蘊 + 效率」。</p>
+                <div class="flex flex-col gap-6">
+                    <div class="bg-white/70 border border-slate-200 rounded-2xl p-6 shadow-sm">
+                        <div class="inline-block bg-red-500 text-white text-xs font-bold px-4 py-1 rounded-full mb-3 uppercase tracking-tighter">案例二：記者 (原版)</div>
+                        <p class="text-slate-500 italic text-base">"獲得金鼎獎，幫長官實現改版計畫。"</p>
                     </div>
-                    <div class="order-1 md:order-2 md:w-2/12 flex justify-center py-2 relative z-10">
-                        <div class="w-10 h-10 md:w-12 md:h-12 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold text-base md:text-xl shadow-lg border-4 border-white">3</div>
-                    </div>
-                    <div class="order-3 md:w-5/12 p-4 hidden md:block"></div>
-                </div>
-
-                <!-- Step 4 & 5 (依此類推) -->
-                <div class="relative flex flex-col md:flex-row items-center md:justify-between">
-                    <div class="order-3 md:order-1 md:w-5/12 p-4 hidden md:block"></div>
-                    <div class="order-1 md:order-2 md:w-2/12 flex justify-center py-2 relative z-10">
-                        <div class="w-10 h-10 md:w-12 md:h-12 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold text-base md:text-xl shadow-lg border-4 border-white">4</div>
-                    </div>
-                    <div class="order-2 md:order-3 md:w-5/12 text-center md:text-left p-4">
-                        <h4 class="font-bold text-brand-primary text-base md:text-lg">4. 數據化成就</h4>
-                        <p class="text-slate-600 text-xs md:text-sm mt-2">將質性成果量化，如滿房率或媒體轉換率。</p>
+                    <div class="bg-white border-4 border-brand-accent rounded-2xl p-8 shadow-xl">
+                        <div class="inline-block bg-brand-accent text-brand-dark text-xs font-bold px-4 py-1 rounded-full mb-4 uppercase tracking-tighter">優化版：媒體策略權威</div>
+                        <p class="text-slate-900 font-bold text-xl leading-relaxed">"金鼎獎殊榮肯定。深耕媒體 20 載，具備媒體室改版與輿論操盤實務。能為主辦單位構建權威性媒體形象，掌握公關主導權。"</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 實戰演練 (手機版改為上下卡片堆疊) -->
-        <section class="bg-slate-100 rounded-2xl md:rounded-3xl p-6 md:p-12 shadow-inner">
-            <h3 class="text-xl md:text-2xl font-bold text-center mb-2">實戰演練：經歷描述優化</h3>
-            <p class="text-center text-slate-500 mb-8 md:mb-10 text-xs md:text-sm">如何將亮點轉化為具備「戰略高度」的語言</p>
-
-            <div class="grid grid-cols-1 gap-8 md:gap-12">
-                <!-- Case 1: Tour Guide -->
-                <div class="flex flex-col gap-3">
-                    <div class="bg-white/60 border border-slate-200 rounded-xl p-5 relative">
-                        <div class="inline-block bg-red-500 text-white text-[10px] font-bold px-2 py-0.5 rounded mb-2">案例一：導遊 (原版)</div>
-                        <p class="text-slate-500 italic text-xs leading-relaxed">"旅客買超過一百萬... 大陸領隊說我口才好... 都在聽我說故事..."</p>
+        <section class="bg-brand-dark text-white rounded-[2.5rem] p-10 md:p-20 shadow-2xl relative overflow-hidden">
+            <div class="relative z-10 max-w-4xl mx-auto">
+                <h3 class="text-3xl md:text-4xl font-black mb-10 text-center text-brand-accent">健檢總結：老將新魂的價值整合</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-16">
+                    <div class="space-y-6">
+                        <h4 class="text-2xl font-bold border-b-2 border-brand-accent pb-2">🎯 職涯亮點整合</h4>
+                        <ul class="space-y-4 text-lg text-slate-300">
+                            <li>• <span class="text-white font-bold">權威認證：</span>金鼎獎背書的頂尖敘事能力。</li>
+                            <li>• <span class="text-white font-bold">跨界溝通：</span>掌握高階商務與普羅大眾心理。</li>
+                        </ul>
                     </div>
-                    <div class="bg-white border-2 border-brand-accent rounded-xl p-5 relative shadow-md">
-                        <div class="inline-block bg-brand-accent text-brand-dark text-[10px] font-bold px-2 py-0.5 rounded mb-2">優化版：高階溝通</div>
-                        <p class="text-slate-800 font-medium text-xs leading-relaxed">"透過議題設定與敘事行銷達成百萬業績。擅長掌握群眾心理，將品牌價值轉化為動人敘事。"</p>
-                    </div>
-                </div>
-
-                <!-- Case 2: Media Reporter -->
-                <div class="flex flex-col gap-3">
-                    <div class="bg-white/60 border border-slate-200 rounded-xl p-5 relative">
-                        <div class="inline-block bg-red-500 text-white text-[10px] font-bold px-2 py-0.5 rounded mb-2">案例二：記者 (原版)</div>
-                        <p class="text-slate-500 italic text-xs leading-relaxed">"新竹地區最年輕記者，獲得金鼎獎，實現改版計畫。"</p>
-                    </div>
-                    <div class="bg-white border-2 border-brand-accent rounded-xl p-5 relative shadow-md">
-                        <div class="inline-block bg-brand-accent text-brand-dark text-[10px] font-bold px-2 py-0.5 rounded mb-2">優化版：媒體策略</div>
-                        <p class="text-slate-800 font-medium text-xs leading-relaxed">"深耕媒體 20 載獲金鼎獎肯定。能為企業建立媒體防線，精準主導品牌輿論風向。"</p>
+                    <div class="space-y-6">
+                        <h4 class="text-2xl font-bold border-b-2 border-brand-accent pb-2">🚀 轉型必備武器</h4>
+                        <ul class="space-y-4 text-lg text-slate-300">
+                            <li>• <span class="text-white font-bold">AI 助攻力：</span>運用新工具達成數位高效執行。</li>
+                            <li>• <span class="text-white font-bold">文化轉譯：</span>難以被技術取代的品牌核心價值。</li>
+                        </ul>
                     </div>
                 </div>
 
-                <!-- Case 3: Entrepreneur/AI -->
-                <div class="flex flex-col gap-3">
-                    <div class="bg-white/60 border border-slate-200 rounded-xl p-5 relative">
-                        <div class="inline-block bg-red-500 text-white text-[10px] font-bold px-2 py-0.5 rounded mb-2">案例三：顧問 (原版)</div>
-                        <p class="text-slate-500 italic text-xs leading-relaxed">"從傳播產製到創業輔導都有，後來發現孤軍奮戰有侷限性。"</p>
-                    </div>
-                    <div class="bg-white border-2 border-brand-accent rounded-xl p-5 relative shadow-md">
-                        <div class="inline-block bg-brand-accent text-brand-dark text-[10px] font-bold px-2 py-0.5 rounded mb-2">優化版：AI 效能顧問</div>
-                        <p class="text-slate-800 font-medium text-xs leading-relaxed">"具備獨立顧問思維。現透過 AI 工具強力助攻，將深厚文字功底與市場速度結合。"</p>
-                    </div>
-                </div>
-
-                <!-- Case 4: Cultural Projects -->
-                <div class="flex flex-col gap-3">
-                    <div class="bg-white/60 border border-slate-200 rounded-xl p-5 relative">
-                        <div class="inline-block bg-red-500 text-white text-[10px] font-bold px-2 py-0.5 rounded mb-2">案例四：教育 (原版)</div>
-                        <p class="text-slate-500 italic text-xs leading-relaxed">"規劃生命力園區，編校刊原本是分擔，我獨攬編務經歷夢魘。"</p>
-                    </div>
-                    <div class="bg-white border-2 border-brand-accent rounded-xl p-5 relative shadow-md">
-                        <div class="inline-block bg-brand-accent text-brand-dark text-[10px] font-bold px-2 py-0.5 rounded mb-2">優化版：品牌整合</div>
-                        <p class="text-slate-800 font-medium text-xs leading-relaxed">"文化教育體系建構專家。擅長將複雜理念轉化為動人的品牌核心價值。"</p>
+                <div class="bg-white/10 rounded-3xl p-8 md:p-12 border border-white/20">
+                    <h4 class="text-2xl font-bold mb-8 text-brand-gold flex items-center">
+                        <span class="mr-4">✉️</span> 自我推薦信開場白 (精華摘要版)
+                    </h4>
+                    <div class="readable-text text-slate-200 space-y-6 text-lg leading-loose">
+                        <p><strong>您好，我是蔡國華（William），一名擁有 25 年傳播資歷，並獲「金鼎獎」殊榮肯定的資深媒體與公關專才。</strong></p>
+                        
+                        <p>在二十載的新聞與出版生涯中，我從特派記者磨練至報社主編。這份資歷賦予我極敏銳的「議題設定」能力，能精準主導品牌輿論風向。我的敘事功力曾獲國家級金鼎獎肯定，這證明我具備將品牌深度價值轉化為受眾共鳴的核心實力。</p>
+                        
+                        <p>除了專業厚度，我更具備強大的跨界溝通力。在擔任顧問與高階領隊期間，我曾透過精準的受眾洞察，達成單次專案百萬業績的轉換，展現出將「內容力」直接轉化為「商業成果」的實戰力。</p>
+                        
+                        <p>面對數位潮流，我積極擁抱時下的 **AI 協作工具（如 ChatGPT、Gemini）**。對我而言，AI 是強力助攻，它能將我深厚的策略底蘊快速轉化為高效執行力。我能為貴公司提供兼具深度與速度的品牌行銷方案，展現「老將眼光、新銳效能」的獨特戰力，創造品牌新高峰。謝謝您！</p>
                     </div>
                 </div>
             </div>
+            <div class="absolute bottom-0 left-0 -mb-20 -ml-20 w-96 h-96 bg-brand-primary rounded-full opacity-10 blur-3xl"></div>
         </section>
 
-        <footer class="text-center pt-8 pb-12">
-            <p class="text-slate-500 text-[10px] md:text-sm mb-2">2026年2月12日 ｜ 104 履歷診療室</p>
-            <p class="text-brand-primary font-bold text-sm md:text-base">Giver: Colleen Pan</p>
+        <footer class="text-center pt-8 pb-16">
+            <p class="text-slate-500 text-sm md:text-base mb-4 font-medium">2026年2月12日 ｜ 104 履歷診療室</p>
+            <p class="text-brand-primary font-black text-xl md:text-2xl">Giver: Colleen Pan</p>
         </footer>
 
     </main>
@@ -319,9 +268,8 @@
         Chart.defaults.color = '#475569';
         Chart.defaults.scale.grid.color = '#e2e8f0';
 
-        // 針對手機版調整字體大小
         const isMobile = window.innerWidth < 768;
-        const tickFontSize = isMobile ? 10 : 12;
+        const tickFontSize = isMobile ? 14 : 16;
 
         const ctxJobFit = document.getElementById('jobFitChart').getContext('2d');
         new Chart(ctxJobFit, {
@@ -329,11 +277,11 @@
             data: {
                 labels: ['The One', '維酷公關', '格新公關'],
                 datasets: [{
-                    label: '媒合指數',
-                    data: [90, 68, 72],
+                    label: '職缺媒合指數',
+                    data: [92, 72, 75],
                     backgroundColor: ['#1d4ed8', '#94a3b8', '#94a3b8'],
-                    borderRadius: 8,
-                    barPercentage: 0.6,
+                    borderRadius: 12,
+                    barPercentage: 0.5,
                 }]
             },
             options: {
@@ -344,8 +292,8 @@
                     legend: { display: false }
                 },
                 scales: {
-                    x: { beginAtZero: true, max: 100, ticks: { font: { size: tickFontSize } } },
-                    y: { grid: { display: false }, ticks: { font: { size: tickFontSize } } }
+                    x: { beginAtZero: true, max: 100, ticks: { font: { size: tickFontSize, weight: 'bold' } } },
+                    y: { grid: { display: false }, ticks: { font: { size: tickFontSize, weight: 'bold' } } }
                 }
             }
         });
@@ -354,21 +302,23 @@
         new Chart(ctxSkill, {
             type: 'radar',
             data: {
-                labels: [['寫作力'], ['危機管理'], ['文化轉譯'], ['AI 助攻'], ['社群趨勢'], ['媒體關係']],
+                labels: [['深度寫作'], ['危機管理'], ['文化轉譯'], ['AI 助攻力'], ['數位趨勢'], ['媒體關係']],
                 datasets: [{
-                    label: '蔡先生潛力',
-                    data: [98, 90, 95, 75, 55, 85],
+                    label: '蔡先生結合 AI 後之潛力',
+                    data: [98, 92, 95, 80, 60, 88],
                     fill: true,
-                    backgroundColor: 'rgba(29, 78, 216, 0.2)',
+                    backgroundColor: 'rgba(29, 78, 216, 0.25)',
                     borderColor: '#1d4ed8',
-                    pointRadius: 3
+                    pointRadius: 5,
+                    borderWidth: 4
                 }, {
-                    label: '市場需求',
+                    label: '市場平均需求',
                     data: [80, 80, 75, 85, 90, 80],
                     fill: true,
                     backgroundColor: 'rgba(245, 158, 11, 0.2)',
                     borderColor: '#f59e0b',
-                    pointRadius: 3
+                    pointRadius: 5,
+                    borderWidth: 2
                 }]
             },
             options: {
@@ -379,11 +329,17 @@
                         suggestedMin: 0,
                         suggestedMax: 100,
                         ticks: { display: false },
-                        pointLabels: { font: { size: tickFontSize } }
+                        pointLabels: { 
+                            font: { size: tickFontSize + 1, weight: 'bold' },
+                            color: '#0f172a'
+                        }
                     }
                 },
                 plugins: {
-                    legend: { position: 'bottom', labels: { boxWidth: 10, font: { size: tickFontSize } } }
+                    legend: { 
+                        position: 'bottom', 
+                        labels: { boxWidth: 20, font: { size: tickFontSize, weight: 'bold' }, padding: 25 } 
+                    }
                 }
             }
         });
